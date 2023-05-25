@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechParts</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <main>
+        <h1>TechParts</h1>
+    </main>
+    <section class="containerCard">
+        <div class="cards">
+            <img src="./img/MemoriaRamKingston.jpg" alt="MemoriaRam">
+            <div class="info">
+                <h2>Kington Memoria Ram 8gb DDr4 3600MHZ</h2>
+                <p>Precio: $17</p> 
+                <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis excepturi ad, nam placeat fuga accusantium ab sed cupiditate corporis laborum dolor iure illum molestias! Fugit facilis neque excepturi voluptatem molestias.</p>
+            </div>
+            <div class="btns">
+                <button onclick="anadir(17,'Kington Memoria Ram 8gb DDr4 3600MHZ')">Añadir</button>
+                <button onclick="quitar(17,'Kington Memoria Ram 8gb DDr4 3600MHZ')">Quitar</button>
+            </div>
+        </div>
+        <div class="cards">
+            <img src="./img/ProcesadorIntel.jpg" alt="Procesador">
+            <div class="info">
+                <h2>Procesador INTEL CORE I9-10900K</h2>
+                <p>Precio: $590</p> 
+                <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis excepturi ad, nam placeat fuga accusantium ab sed cupiditate corporis laborum dolor iure illum molestias! Fugit facilis neque excepturi voluptatem molestias.</p>
+            </div>
+            <div class="btns">
+                <button onclick="anadir(590,'Procesador INTEL CORE I9-10900K')">Añadir</button>
+                <button onclick="quitar(590,'Procesador INTEL CORE I9-10900K')">Quitar</button>
+            </div>
+        </div>
+        <div class="cards">
+            <img src="./img/FuenteDePoder.jpg" alt="FuenteDePoder">
+            <div class="info">
+                <h2>Fuente COOLER MASTER MWE 750 V2 750W 80 PLUS GOLD</h2>
+                <p>Precio: $120</p> 
+                <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis excepturi ad, nam placeat fuga accusantium ab sed cupiditate corporis laborum dolor iure illum molestias! Fugit facilis neque excepturi voluptatem molestias.</p>
+            </div>
+            <div class="btns">
+                <button onclick="anadir(120,'Fuente COOLER MASTER MWE 750 V2 750W 80 PLUS GOLD')">Añadir</button>
+                <button onclick="quitar(120,'Fuente COOLER MASTER MWE 750 V2 750W 80 PLUS GOLD')">Quitar</button>
+            </div>
+        </div>
+        <div class="cards">
+            <img src="./img/ProcesadorAmd.jpg" alt="Procesador">
+            <div class="info">
+                <h2>Procesador AMD RYZEN 5-5600G</h2>
+                <p>Precio: $170</p> 
+                <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis excepturi ad, nam placeat fuga accusantium ab sed cupiditate corporis laborum dolor iure illum molestias! Fugit facilis neque excepturi voluptatem molestias.</p>
+            </div>
+            <div class="btns">
+                <button onclick="anadir(170,'Procesador AMD RYZEN 5-5600G')">Añadir</button>
+                <button onclick="quitar(170,'Procesador AMD RYZEN 5-5600G')">Quitar</button>
+            </div>
+        </div>
+        <div class="cards">
+            <img src="./img/PlacaMadreIntel.jpg" alt="PlacaMadre">
+            <div class="info">
+                <h2>Placa Madre ASUS PRIME H610M-K D4</h2>
+                <p>Precio: $103</p> 
+                <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis excepturi ad, nam placeat fuga accusantium ab sed cupiditate corporis laborum dolor iure illum molestias! Fugit facilis neque excepturi voluptatem molestias.</p>
+            </div>
+            <div class="btns">
+                <button onclick="anadir(103,'Placa Madre ASUS PRIME H610M-K D4')">Añadir</button>
+                <button onclick="quitar(103,'Placa Madre ASUS PRIME H610M-K D4')">Quitar</button>
+            </div>
+        </div>
+        <div class="cards">
+            <img src="./img/PlacaMadreAmd.jpg" alt="PlacaMadre">
+            <div class="info">
+                <h2>Placa Madre ASUS B650M-A</h2>
+                <p>Precio: $230</p> 
+                <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis excepturi ad, nam placeat fuga accusantium ab sed cupiditate corporis laborum dolor iure illum molestias! Fugit facilis neque excepturi voluptatem molestias.</p>
+            </div>
+            <div class="btns">
+                <button onclick="anadir(230,'Placa Madre ASUS B650M-A')" class="anadir">Añadir</button>
+                <button onclick="quitar(230,'Placa Madre ASUS B650M-A')" class="quitar">Quitar</button>
+            </div>
+        </div>
+    </section>
+    <div class="mostrar">
+        <button onclick="mostrar()" class="mostrarBtn">Mostrar</button>
+
+    </div>
+    <script src="./js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+main h1{
+    text-align: center;
+    font-size: 50px;
+}
+.containerCard{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.cards{
+    width: 250px;
+    height: 450px;
+    display: grid;
+    grid-template-rows: 50% 44% 6%;
+    margin: 10px;
+}
+.cards img{
+    overflow: hidden;
+    width: 90%;
+    padding: 10px;
+    margin: 0 auto;
+}
+.cards .info{
+    width: 100%;
+    background: #fff;
+    overflow: hidden;
+}
+.cards .info h2{
+    font-size: 18px;
+    font-weight: 900;
+}
+.cards .info p:nth-last-child(2){
+    font-size: 20px;
+    font-weight: 700;
+}
+.cards .info p:nth-last-child(1){
+    color: #656565;
+    font-size: 17px;
+}
+.cards .info .text{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    overflow: hidden;
+}
+.cards .btns{
+    display: flex;
+    justify-content: space-evenly;
+}
+.cards .btns button{
+    width: 35%;
+    border-radius: 8px;
+    border: 1px solid #111;
+    background: #fff;
+}
+.cards .btns button:hover{
+    background: #111;
+    color: #fff;
+    cursor: pointer;
+}
+.mostrar{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+.mostrarBtn{
+    width: 60%;
+    height: 50px;
+    border-radius: 8px;
+    border: 1px solid #111;
+    background: #fff;
+    font-size: 30px;
+    font-weight: 600;
+
+}
+.mostrarBtn:hover{
+    background: #111;
+    color: #fff;
+    cursor: pointer;
+}
