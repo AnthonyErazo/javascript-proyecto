@@ -3,63 +3,101 @@
     padding: 0;
     font-family: 'Poppins', sans-serif;
 }
-main h1{
+.main{
+    background-color: #3a3a3a;
+    margin: 0 2rem 0 2rem;
+    border-radius: 1rem;
+}
+.titleMain{
     text-align: center;
     font-size: 50px;
+    padding-top: 30px;
+    color: #fff;
 }
-.containerCard{
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+.logo{
+    font-size: 40px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #111;
+}
+.menu{
+    list-style: none;
+    display: flex;
+    gap: 18px;
+}
+.botnMenu{
+    background-color: transparent;
+    border: 0;
+    color: #111;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.productsContainer{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
-.cards{
+.product{
+    background-color: #fff;
+    border-radius: .5rem;
     width: 250px;
     height: 450px;
     display: grid;
     grid-template-rows: 50% 44% 6%;
     margin: 10px;
+    padding: 10px;
 }
-.cards img{
+.product img{
     overflow: hidden;
     width: 90%;
     padding: 10px;
     margin: 0 auto;
 }
-.cards .info{
+.product .productInfo{
     width: 100%;
     background: #fff;
     overflow: hidden;
 }
-.cards .info h2{
+.product .productInfo h2{
     font-size: 18px;
     font-weight: 900;
 }
-.cards .info p:nth-last-child(2){
+.product .productInfo p:nth-last-child(2){
     font-size: 20px;
     font-weight: 700;
 }
-.cards .info p:nth-last-child(1){
+.product .productInfo p:nth-last-child(1){
     color: #656565;
     font-size: 17px;
 }
-.cards .info .text{
+.product .productInfo .text{
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 5;
     line-clamp: 5;
     overflow: hidden;
 }
-.cards .btns{
+.product .btns{
     display: flex;
     justify-content: space-evenly;
 }
-.cards .btns button{
+.product .btns button{
     width: 35%;
     border-radius: 8px;
     border: 1px solid #111;
     background: #fff;
 }
-.cards .btns button:hover{
+.product .btns button:hover{
     background: #111;
     color: #fff;
     cursor: pointer;
@@ -68,6 +106,7 @@ main h1{
     display: flex;
     justify-content: center;
     margin: 20px;
+    padding-bottom: 40px;
 }
 .mostrarBtn{
     width: 60%;
@@ -83,4 +122,29 @@ main h1{
     background: #111;
     color: #fff;
     cursor: pointer;
+}
+.botnMenu.selected{
+    background: #3a3a3a;
+    border-radius: 1rem 1rem 0 0;
+    color: #fff;
+}
+.botnMenu.selected::before{
+    content: '';
+    position: relative;
+    left: -1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: transparent;
+    border-bottom-right-radius: .5rem;
+    box-shadow: 0rem 1rem 0 #3a3a3a;
+}
+.botnMenu.selected::after{
+    content: '';
+    position: relative;
+    right: -1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: transparent;
+    border-bottom-left-radius: 0.5rem;
+    box-shadow: 0 1rem 0 #3a3a3a;
 }
