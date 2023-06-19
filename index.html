@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <title>TechParts</title>
     <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
     <header class="header">
         <a href="#" class="logo">TechParts</a>
-        <!-- <input type="checkbox" id="side-menu" class="side-menu">
-        <label for="side-menu" class="hamb"><span class="hamb-line"></span></label> -->
         <nav class="nav">
             <ul class="menu">
-                <li><button id="todos" class="botnMenu categorybotn selected">Todos los productos</button></li>
+                <li ><button id="todos" class="botnMenu categorybotn selected">Todos los productos</button></li>
                 <li><button id="placaMadre" class="botnMenu categorybotn">Placas Madre</button></li>
                 <li><button id="memoriaRam" class="botnMenu categorybotn">Memorias Ram</button></li>
                 <li><button id="fuenteDePoder" class="botnMenu categorybotn">Fuentes de Poder</button></li>
@@ -26,11 +25,14 @@
         <h2 id="titleMain" class="titleMain">Todos los productos</h2>
         <div id="productContainer" class="productsContainer">
         </div>
-        <div class="mostrar">
-            <button onclick="mostrar()" class="mostrarBtn">Mostrar</button>
-        </div>
     </main>
-    
+    <div class="windowModal" id="windowModal">
+        <div class="windowContainer" id="windowContainer">
+            <button class="closeButton" id="closeButton"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="iconX"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg></button>
+            <div id="productModal" class="productModal">
+            </div>
+        </div>
+    </div>
     <script src="./js/app.js"></script>
 </body>
 </html>
