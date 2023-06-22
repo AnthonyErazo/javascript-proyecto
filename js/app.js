@@ -2,15 +2,13 @@ const producto=[
     //Memorias Ram 
     {
         id: "memoriaRam01",
-        idModal:"01memoriaRam",
         nombre: "MEMORIA 16GB DDR4 KINGSTON FURY BEAST BUS 3200MHZ BLACK",
         categoria:{
             nombre:"Memoria Ram",
             id:"memoriaRam"
         },
         precio:46.50,
-        imagen:"./img/MemoriaRamFury3.jpg",
-        cantidad:0
+        imagen:"./img/MemoriaRamFury3.jpg"
     },
     {
         id: "memoriaRam02",
@@ -20,8 +18,7 @@ const producto=[
             id:"memoriaRam"
         },
         precio:39.00,
-        imagen:"./img/MemoriaRamKingston2.jpg",
-        cantidad:0
+        imagen:"./img/MemoriaRamKingston2.jpg"
     },
     {
         id: "memoriaRam03",
@@ -31,8 +28,7 @@ const producto=[
             id:"memoriaRam"
         },
         precio:30.00,
-        imagen:"./img/MemoriaRamAdata.jpg",
-        cantidad:0
+        imagen:"./img/MemoriaRamAdata.jpg"
     },
     {
         id: "memoriaRam04",
@@ -42,8 +38,7 @@ const producto=[
             id:"memoriaRam"
         },
         precio:38.50,
-        imagen:"./img/MemoriaRamFury.jpg",
-        cantidad:0
+        imagen:"./img/MemoriaRamFury.jpg"
     },
     {
         id: "memoriaRam05",
@@ -53,8 +48,7 @@ const producto=[
             id:"memoriaRam"
         },
         precio:75.00,
-        imagen:"./img/MemoriaRamFury2.jpg",
-        cantidad:0
+        imagen:"./img/MemoriaRamFury2.jpg"
     },
     {
         id: "memoriaRam06",
@@ -64,8 +58,7 @@ const producto=[
             id:"memoriaRam"
         },
         precio:24.50,
-        imagen:"./img/MemoriaRamTForce.jpg",
-        cantidad:0
+        imagen:"./img/MemoriaRamTForce.jpg"
     },
     {
         id: "memoriaRam07",
@@ -75,8 +68,7 @@ const producto=[
             id:"memoriaRam"
         },
         precio:85.50,
-        imagen:"./img/MemoriaRamViperGaming.jpg",
-        cantidad:0
+        imagen:"./img/MemoriaRamViperGaming.jpg"
     },
     {
         id: "memoriaRam08",
@@ -86,8 +78,7 @@ const producto=[
             id:"memoriaRam"
         },
         precio:39.50,
-        imagen:"./img/MemoriaRamXPG.jpg",
-        cantidad:0
+        imagen:"./img/MemoriaRamXPG.jpg"
     },
     //Procesadores Intel
     {
@@ -98,8 +89,7 @@ const producto=[
             id:"procesador"
         },
         precio:590.00,
-        imagen:"./img/ProcesadorIntel.jpg",
-        cantidad:0
+        imagen:"./img/ProcesadorIntel.jpg"
     },
     {
         id: "procesador02",
@@ -109,8 +99,7 @@ const producto=[
             id:"procesador"
         },
         precio:68.50,
-        imagen:"./img/ProcesadorIntel2.jpg",
-        cantidad:0
+        imagen:"./img/ProcesadorIntel2.jpg"
     },
     {
         id: "procesador03",
@@ -120,8 +109,7 @@ const producto=[
             id:"procesador"
         },
         precio:76.80,
-        imagen:"./img/ProcesadorIntel3.jpg",
-        cantidad:0
+        imagen:"./img/ProcesadorIntel3.jpg"
     },
     {
         id: "procesador04",
@@ -131,8 +119,7 @@ const producto=[
             id:"procesador"
         },
         precio:82.30,
-        imagen:"./img/ProcesadorIntel4.jpg",
-        cantidad:0
+        imagen:"./img/ProcesadorIntel4.jpg"
     },
     {
         id: "procesador05",
@@ -142,8 +129,7 @@ const producto=[
             id:"procesador"
         },
         precio:87.80,
-        imagen:"./img/ProcesadorIntel5.jpg",
-        cantidad:0
+        imagen:"./img/ProcesadorIntel5.jpg"
     },
     {
         id: "procesador06",
@@ -153,8 +139,7 @@ const producto=[
             id:"procesador"
         },
         precio:129.10,
-        imagen:"./img/ProcesadorIntel6.jpg",
-        cantidad:0
+        imagen:"./img/ProcesadorIntel6.jpg"
     },
     //Procesadores AMD
     {
@@ -165,8 +150,7 @@ const producto=[
             id:"procesador"
         },
         precio:162.00,
-        imagen:"./img/ProcesadorAmd.jpg",
-        cantidad:0
+        imagen:"./img/ProcesadorAmd.jpg"
     },
     {
         id: "procesador08",
@@ -176,8 +160,7 @@ const producto=[
             id:"procesador"
         },
         precio:90.60,
-        imagen:"./img/ProcesadorAmd2.jpg",
-        cantidad:0
+        imagen:"./img/ProcesadorAmd2.jpg"
     },
     {
         id: "procesador09",
@@ -187,8 +170,7 @@ const producto=[
             id:"procesador"
         },
         precio:129.10,
-        imagen:"./img/ProcesadorAmd3.jpg",
-        cantidad:0
+        imagen:"./img/ProcesadorAmd3.jpg"
     },
     {
         id: "procesador10",
@@ -198,8 +180,7 @@ const producto=[
             id:"procesador"
         },
         precio:118.10,
-        imagen:"./img/ProcesadorAmd4.jpg",
-        cantidad:0
+        imagen:"./img/ProcesadorAmd4.jpg"
     },
     {
         id: "procesador11",
@@ -209,8 +190,7 @@ const producto=[
             id:"procesador"
         },
         precio:134.60,
-        imagen:"./img/ProcesadorAmd5.jpg",
-        cantidad:0
+        imagen:"./img/ProcesadorAmd5.jpg"
     },
     //Placas madre Intel
     {
@@ -221,8 +201,7 @@ const producto=[
             id:"placaMadre"
         },
         precio:79.60,
-        imagen:"./img/PlacaMadreIntel2.jpg",
-        cantidad:0
+        imagen:"./img/PlacaMadreIntel2.jpg"
     },
     {
         id: "placaMadre02",
@@ -232,8 +211,7 @@ const producto=[
             id:"placaMadre"
         },
         precio:90.60,
-        imagen:"./img/PlacaMadreIntel3.jpg",
-        cantidad:0
+        imagen:"./img/PlacaMadreIntel3.jpg"
     },
     {
         id: "placaMadre03",
@@ -243,8 +221,7 @@ const producto=[
             id:"placaMadre"
         },
         precio:93.30,
-        imagen:"./img/PlacaMadreIntel4.jpg",
-        cantidad:0
+        imagen:"./img/PlacaMadreIntel4.jpg"
     },
     {
         id: "placaMadre04",
@@ -254,8 +231,7 @@ const producto=[
             id:"placaMadre"
         },
         precio:115.30,
-        imagen:"./img/PlacaMadreIntel.jpg",
-        cantidad:0
+        imagen:"./img/PlacaMadreIntel.jpg"
     },
     //Placas madre AMD
     {
@@ -266,8 +242,7 @@ const producto=[
             id:"placaMadre"
         },
         precio:241.90,
-        imagen:"./img/PlacaMadreAmd.jpg",
-        cantidad:0
+        imagen:"./img/PlacaMadreAmd.jpg"
     },
     {
         id: "placaMadre06",
@@ -277,8 +252,7 @@ const producto=[
             id:"placaMadre"
         },
         precio:54.80,
-        imagen:"./img/PlacaMadreAmd2.jpg",
-        cantidad:0
+        imagen:"./img/PlacaMadreAmd2.jpg"
     },
     {
         id: "placaMadre07",
@@ -288,8 +262,7 @@ const producto=[
             id:"placaMadre"
         },
         precio:76.80,
-        imagen:"./img/PlacaMadreAmd3.jpg",
-        cantidad:0
+        imagen:"./img/PlacaMadreAmd3.jpg"
     },
     {
         id: "placaMadre08",
@@ -299,8 +272,7 @@ const producto=[
             id:"placaMadre"
         },
         precio:90.60,
-        imagen:"./img/PlacaMadreAmd4.jpg",
-        cantidad:0
+        imagen:"./img/PlacaMadreAmd4.jpg"
     },
     {
         id: "placaMadre09",
@@ -310,8 +282,7 @@ const producto=[
             id:"placaMadre"
         },
         precio:112.60,
-        imagen:"./img/PlacaMadreAmd5.jpg",
-        cantidad:0
+        imagen:"./img/PlacaMadreAmd5.jpg"
     },
     //Fuentes de poder
     {
@@ -322,8 +293,7 @@ const producto=[
             id:"fuenteDePoder"
         },
         precio:112.00,
-        imagen:"./img/FuenteDePoder.jpg",
-        cantidad:0
+        imagen:"./img/FuenteDePoder.jpg"
     },
     {
         id: "fuenteDePoder02",
@@ -333,8 +303,7 @@ const producto=[
             id:"fuenteDePoder"
         },
         precio:72.00,
-        imagen:"./img/FuenteDePoder2.jpg",
-        cantidad:0
+        imagen:"./img/FuenteDePoder2.jpg"
     },
     {
         id: "fuenteDePoder03",
@@ -344,8 +313,7 @@ const producto=[
             id:"fuenteDePoder"
         },
         precio:29.00,
-        imagen:"./img/FuenteDePoder3.jpg",
-        cantidad:0
+        imagen:"./img/FuenteDePoder3.jpg"
     },
     {
         id: "fuenteDePoder04",
@@ -355,8 +323,7 @@ const producto=[
             id:"fuenteDePoder"
         },
         precio:40.00,
-        imagen:"./img/FuenteDePoder4.jpg",
-        cantidad:0
+        imagen:"./img/FuenteDePoder4.jpg"
     },
     {
         id: "fuenteDePoder05",
@@ -366,8 +333,7 @@ const producto=[
             id:"fuenteDePoder"
         },
         precio:55.50,
-        imagen:"./img/FuenteDePoder5.jpg",
-        cantidad:0
+        imagen:"./img/FuenteDePoder5.jpg"
     },
     {
         id: "fuenteDePoder06",
@@ -377,8 +343,7 @@ const producto=[
             id:"fuenteDePoder"
         },
         precio:77.00,
-        imagen:"./img/FuenteDePoder6.jpg",
-        cantidad:0
+        imagen:"./img/FuenteDePoder6.jpg"
     },
     {
         id: "fuenteDePoder07",
@@ -388,8 +353,7 @@ const producto=[
             id:"fuenteDePoder"
         },
         precio:61.50,
-        imagen:"./img/FuenteDePoder7.jpg",
-        cantidad:0
+        imagen:"./img/FuenteDePoder7.jpg"
     },
     {
         id: "fuenteDePoder08",
@@ -399,8 +363,7 @@ const producto=[
             id:"fuenteDePoder"
         },
         precio:65.00,
-        imagen:"./img/FuenteDePoder8.jpg",
-        cantidad:0
+        imagen:"./img/FuenteDePoder8.jpg"
     },
     {
         id: "fuenteDePoder09",
@@ -410,8 +373,7 @@ const producto=[
             id:"fuenteDePoder"
         },
         precio:85.00,
-        imagen:"./img/FuenteDePoder9.jpg",
-        cantidad:0
+        imagen:"./img/FuenteDePoder9.jpg"
     },
     {
         id: "fuenteDePoder10",
@@ -421,11 +383,10 @@ const producto=[
             id:"fuenteDePoder"
         },
         precio:435.00,
-        imagen:"./img/FuenteDePoder10.jpg",
-        cantidad:0
+        imagen:"./img/FuenteDePoder10.jpg"
     },
 ];
-
+/*Definiendo las variables*/
 const productContainer=document.querySelector('#productContainer'),
     botnCategory=document.querySelectorAll(".categorybotn"),
     titleMain=document.querySelector("#titleMain"),
@@ -434,8 +395,13 @@ const productContainer=document.querySelector('#productContainer'),
     closeButton=document.getElementById('closeButton'),
     productModal=document.querySelector('#productModal');
 let botnView=document.querySelectorAll(".tooltip"),
-    botnAdd=document.querySelectorAll(".botnAdd");
+    botnAdd=document.querySelectorAll(".botnAdd"),
+    numProductsCart=document.querySelector('.numProductsCart');
+let carrito;
+let cantProduct=1,
+    productsCart=0;
 
+/*Funcion para cargar los productos segun la categoria elegida*/
 function loadProducts(productSelect){
     productContainer.innerHTML="";
     productSelect.forEach(p=>{
@@ -452,16 +418,20 @@ function loadProducts(productSelect){
             <div class="productInfo">
                 <h2>${p.nombre}</h2>
                 <p>Precio: $${p.precio}</p>
-                <button id="${p.id}" class="botnAdd">Añadir</button>
+                <button id="${p.id}" class="botnAdd"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
             </div>
         `;
         productContainer.append(div);
     });
     actualizarBotonesAgregar();
-    actualizarBotonesModal();
+    botnView=document.querySelectorAll(".tooltip");
+    botnView.forEach(botn=>{
+        botn.addEventListener('click',modalWindowView);
+    });
 }
 loadProducts(producto);
 
+/*Botones de las categorias*/
 botnCategory.forEach(botn=>{
     botn.addEventListener("click", (e) =>{
         botnCategory.forEach(botn=>botn.classList.remove("selected"));
@@ -480,8 +450,7 @@ botnCategory.forEach(botn=>{
     });
 });
 
-
-
+/*Funcion para abrir venta de vista rapida del producto*/
 function modalWindowView(e){
     windowModal.style.display='flex';
         productModal.innerHTML="";
@@ -490,44 +459,67 @@ function modalWindowView(e){
                 const div=document.createElement("div");
                 div.classList.add("viewProductModal");
                 div.innerHTML=`
-                <img src="${p.imagen}" alt="${p.categoria.nombre}">
-                <div>
+                <figure id="magnifying_area">
+                    <img id="magnifying_img" src="${p.imagen}" alt="${p.categoria.nombre}">
+                </figure>
+                <div class="productInfoModal">
                     <h2>${p.nombre}</h2>
                     <p>Precio: $${p.precio}</p>
-                    <button id="${p.idModal}" class="botnAdd">Añadir</button>
+                    <div class="botnCant">
+                        <span class="minus">-</span>
+                        <span class="numCant">1</span>
+                        <span class="plus">+</span>
+                    </div>
+                    <button id="${p.id}" class="botnAdd"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
                 </div>
                 `;
                 productModal.append(div);
             };
         });
         actualizarBotonesAgregar();
+        
+        /*Varibales y eventos de los botones + y - dentro de la ventana de vista rapida*/
+        let numCant=document.querySelector('.numCant'),
+            plus=document.querySelector('.plus'),
+            minus=document.querySelector('.minus');
+        plus.addEventListener('click',(p)=>{
+            cantProduct++;
+            numCant.innerHTML=cantProduct;
+        });
+        minus.addEventListener('click',(m)=>{
+            if(cantProduct>1){
+                cantProduct--;
+                numCant.innerHTML=cantProduct;
+            }
+        });
 }
-function actualizarBotonesModal(){
-    botnView=document.querySelectorAll(".tooltip");
-    botnView.forEach(botn=>{
-        botn.addEventListener('click',(e)=>modalWindowView(e));
-    });
-}
+/*Funcion para renderizar botones COMPRAR*/
 function actualizarBotonesAgregar(){
     botnAdd=document.querySelectorAll(".botnAdd");
     botnAdd.forEach(botn=>{
-        botn.addEventListener('click',(e)=>agregarCarrito(e))
+        botn.addEventListener('click',agregarCarrito);
     });
+    
 }
+/*Funcion para agregar productos al carrito y guardarlo en almacenamiento local*/
 function agregarCarrito(e){
     console.log(e.currentTarget.id);
-    for(let p of producto){
-        if(p.id==e.currentTarget.id){
-            p.cantidad++;
-            console.log(p.cantidad);
-        }else if(p.idModal==e.currentTarget.id){
-            p.cantidad++;
-            console.log(p.cantidad);
-        };
+    const enCarrito=carrito.find(p=>p.id==e.currentTarget.id);
+    if(enCarrito){
+        enCarrito.cantidad+=cantProduct;
+        console.log(enCarrito.cantidad);
+    }else{
+        let findProduct = producto.find(p => p.id == e.currentTarget.id);
+        findProduct.cantidad=cantProduct;
+        carrito.push(findProduct);
+        console.log(findProduct.cantidad);
     }
+    productsCart+=cantProduct;
+    numProductsCart.innerHTML=productsCart;
+    localStorage.setItem("carrito",JSON.stringify(carrito));
 }
 
-
+/*Funcion para cerrar venta de vista rapida*/
 const closeWindow=()=>{
     windowContainer.classList.add('close');
 
@@ -535,8 +527,17 @@ const closeWindow=()=>{
         windowContainer.classList.remove('close');
         windowModal.style.display='none';
     },500);
+    cantProduct=1;
 };
-
 closeButton.addEventListener('click',()=>closeWindow());
-
 window.addEventListener('click',e=>e.target==windowModal&&closeWindow());
+
+/*Obteniendo datos del carrito, del almacenamiento local*/
+let productsInCart=localStorage.getItem("carrito")
+if(productsInCart){
+    carrito=JSON.parse(productsInCart);
+    numProductsCart.innerHTML=carrito.reduce((acc,c)=> acc+c.cantidad,0);;
+}else{
+    carrito=[];
+}
+
