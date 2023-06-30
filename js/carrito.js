@@ -1,7 +1,7 @@
 //Objetos en el carrito
 let carrito=localStorage.getItem("carrito");
 carrito=JSON.parse(carrito);
-
+//Variables
 const productoCartContainer=document.querySelector('#productCartContainer'),
     titleCart=document.getElementById('titleCart'),
     cartEmpty=document.getElementById('cartEmpty'),
@@ -13,7 +13,7 @@ let buyNow=document.getElementById('buyNow'),
     priceTotalProducts=document.getElementById('priceTotalProducts'),
     plus = document.querySelectorAll(".plus"),
     minus = document.querySelectorAll(".minus");
-
+/*Funcion para aumentar la cantidad del producto*/
 function addCant(e){
     carrito.forEach(c=>{
         if(c.id==e.target.getAttribute('data-id')){
@@ -22,6 +22,7 @@ function addCant(e){
     });
     loadCartWindow()
 }
+/*Funcion para reducir la cantidad del producto*/
 function removeCant(e){
     carrito.forEach(c=>{
         if(c.id==e.target.getAttribute('data-id')&&c.cantidad>1){
@@ -30,8 +31,10 @@ function removeCant(e){
     });
     loadCartWindow()
 }
+/*Funcion para cargar los productos del añadidos en el carrito*/
 function loadCartWindow(){
     if(carrito&&carrito.length>0){
+        /*Si hay productos en el carrito se muestran*/
         productoCartContainer.innerHTML="";
         titleCart.style.display="block";
         cartProductTitle.style.display="grid";
@@ -44,7 +47,7 @@ function loadCartWindow(){
             div.innerHTML=`
                 <img src="${c.imagen}" alt="${c.categoria.nombre}">
                 <h3>${c.nombre}</h3>
-                <p>$${c.precio}</p>
+                <p>$${c.precio.toFixed(2)}</p>
                 <div class="cant">
                     <div class="botnCant">
                         <span class="minus" data-id="${c.id}">-</span>
@@ -53,11 +56,12 @@ function loadCartWindow(){
                     </div>
                     <button id="${c.id}" class="botneliminar"><i class="fa-solid fa-trash"></i></button>
                 </div>
-                <p id="totalPrice">$${c.cantidad*c.precio}</p>
+                <p id="totalPrice">$${(c.cantidad*c.precio).toFixed(2)}</p>
             `;
             productoCartContainer.append(div);
         });
     }else{
+        /*De lo contrario solo mostrara un mensaje*/
         productoCartContainer.innerHTML="";
         titleCart.style.display="none";
         cartEmpty.style.display="block";
@@ -65,6 +69,7 @@ function loadCartWindow(){
         totalPriceCart.style.display="none";
         buyNow.style.display="none";
     }
+    /*Renderizando los botones para aumentar y reducir cantidad*/
     plus = document.querySelectorAll(".plus");
     minus = document.querySelectorAll(".minus");
     plus.forEach(a=>{
@@ -73,10 +78,12 @@ function loadCartWindow(){
     minus.forEach(r=>{
         r.addEventListener('click',removeCant);
     });
+    /*Actualizando el precio Total*/
     let precioTotal=0;
     carrito.forEach(c=>precioTotal+=c.cantidad*c.precio);
-    priceTotalProducts.innerHTML="$"+precioTotal;
+    priceTotalProducts.innerText="$"+precioTotal.toFixed(2);
     localStorage.setItem("carrito",JSON.stringify(carrito));
+    /*Actualizando boton eliminar y comprar*/
     botneliminar=document.querySelectorAll('.botneliminar');
     botneliminar.forEach(botn=>{
         botn.addEventListener('click',eliminateProduct);
@@ -86,15 +93,16 @@ function loadCartWindow(){
 
 loadCartWindow();
 
+/*Funcion para eliminar el producto del carrito*/
 function eliminateProduct(e){
     console.log(e.currentTarget.id);
     let findProduct=carrito.find(p => p.id == e.currentTarget.id);
-    console.log(carrito.indexOf(findProduct));
     carrito.splice(carrito.indexOf(findProduct),1);
     loadCartWindow();
 
     localStorage.setItem("carrito",JSON.stringify(carrito));
 }
+/*Funcion para comprar productos añadidos al carrito*/
 function comprar(){
     carrito.length=0;
     localStorage.setItem("carrito",JSON.stringify(carrito));
