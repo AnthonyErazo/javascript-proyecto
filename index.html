@@ -1,40 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>TechParts</title>
     <link rel="stylesheet" href="./style/style.css">
 </head>
+
 <body>
     <header class="header">
         <a href="./index.html" class="logo">TechParts</a>
-        <nav class="nav">
-            <ul class="menu">
-                <li id="todos" class="botnMenu categorybotn selected">Todos los productos</li>
-                <li id="placaMadre" class="botnMenu categorybotn">Placas Madre</li>
-                <li id="memoriaRam" class="botnMenu categorybotn">Memorias Ram</li>
-                <li id="fuenteDePoder" class="botnMenu categorybotn">Fuentes de Poder</li>
-                <li id="procesador" class="botnMenu categorybotn">Procesadores</li>
-            </ul>
-        </nav>
-        <a class="logoCart" href="./carrito.html"><i class="fa-solid fa-cart-shopping"></i><span class="numProductsCart">00</span></a>
+        <a class="logoCart" href="./carrito.html"><i class="fa-solid fa-cart-shopping"></i><span
+                class="numProductsCart">00</span></a>
     </header>
     <main class="main">
-        <h1 id="titleMain" class="titleMain">Todos los productos</h1>
-        <div id="productContainer" class="productsContainer">
+        <!-- Contenedor del buscador -->
+        <div class="containerSearch">
+            <div class="inputContainer">
+                <input id="search" class="search" type="text" autocomplete="off"
+                    placeholder="Ingrese producto a buscar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="productSearch" id="productSearch">
+            </div>
         </div>
+        <!-- Titulo y contenido principal -->
+        <h1 id="titleMain" class="titleMain">Todos los productos</h1>
+        <div class="containerMain">
+            <!-- Filtros -->
+            <aside class="filter" id="filter">
+                <!-- Contenedor de categoria -->
+                <div class="categoryProduct">
+                    <h2>Categoria</h2>
+                    <div class="content">
+                        <ul class="menu">
+                            <li id="todos" class="botnMenu categorybotn selected"><i
+                                    class="fa-solid fa-caret-up fa-rotate-90"></i>Todos los productos</li>
+                            <li id="placaMadre" class="botnMenu categorybotn"><i
+                                    class="fa-solid fa-caret-up fa-rotate-90"></i>Placas Madre</li>
+                            <li id="memoriaRam" class="botnMenu categorybotn"><i
+                                    class="fa-solid fa-caret-up fa-rotate-90"></i>Memorias Ram</li>
+                            <li id="fuenteDePoder" class="botnMenu categorybotn"><i
+                                    class="fa-solid fa-caret-up fa-rotate-90"></i>Fuentes de Poder</li>
+                            <li id="procesador" class="botnMenu categorybotn"><i
+                                    class="fa-solid fa-caret-up fa-rotate-90"></i>Procesadores</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="detallesCategory" id="detallesCategory">
+                </div>
+                <!-- Rango de precio -->
+                <div class="precioCategory">
+                    <h2>Precio</h2>
+                    <div class="content">
+                        <div class="priceInput">
+                            <div class="field">
+                                <span>Min</span>
+                                <input type="number" class="inputMin" value="0">
+                            </div>
+                            <div class="field">
+                                <span>Max</span>
+                                <input type="number" class="inputMax" value="600">
+                            </div>
+                        </div>
+                        <div class="slider">
+                            <div class="progress"></div>
+                        </div>
+                        <div class="rangeInput">
+                            <input type="range" class="rangeMin" min="0" max="600" value="0" step="10">
+                            <input type="range" class="rangeMax" min="0" max="600" value="600" step="10">
+                        </div>
+                    </div>
+
+                </div>
+            </aside>
+            <div id="productContainer" class="productsContainer">
+            </div>
+        </div>
+
     </main>
-    /*Ventana de vista rapida*/
+    <!-- Ventana de vista rapida -->
     <div class="windowModal" id="windowModal">
         <div class="windowContainer" id="windowContainer">
-            <button class="closeButton" id="closeButton"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="iconX"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg></button>
+            <button class="closeButton" id="closeButton"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" class="iconX">
+                    <path
+                        d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z">
+                    </path>
+                </svg></button>
             <div id="productModal" class="productModal">
             </div>
         </div>
     </div>
+    <!-- Boton ir arriba -->
+    <div class="goTopContainer">
+        <div class="goTopButton">
+            <i class="fa-sharp fa-solid fa-arrow-up"></i>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./js/app.js"></script>
 </body>
+
 </html>

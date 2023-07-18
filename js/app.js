@@ -1,661 +1,193 @@
-const producto=[
-    //Memorias Ram 
-    {
-        id: "memoriaRam01",
-        nombre: "MEMORIA 16GB DDR4 KINGSTON FURY BEAST BUS 3200MHZ BLACK",
-        categoria:{
-            nombre:"Memoria Ram",
-            id:"memoriaRam"
-        },
-        descripcion:{
-            marca:"Kignston",
-            capacidad:"16GB",
-            memoria:"DDR4",
-            velocidad:"3200MHz",
-            iluminacion:"sin rgb"
-        },
-        precio:46.50,
-        imagen:"./img/MemoriaRamFury3.jpg"
-    },
-    {
-        id: "memoriaRam02",
-        nombre: "MEMORIA 8GB DDR3 KINGSTON BUS 1600GHZ",
-        categoria:{
-            nombre:"Memoria Ram",
-            id:"memoriaRam"
-        },
-        descripcion:{
-            marca:"Kignston",
-            capacidad:"8GB",
-            memoria:"DDR3",
-            velocidad:"1600MHz",
-            iluminacion:"sin rgb"
-        },
-        precio:39.00,
-        imagen:"./img/MemoriaRamKingston2.jpg"
-    },
-    {
-        id: "memoriaRam03",
-        nombre: "MEMORIA 8GB DDR3L ADATA UDIMM BUS 1600MHZ",
-        categoria:{
-            nombre:"Memoria Ram",
-            id:"memoriaRam"
-        },
-        descripcion:{
-            marca:"Adata",
-            capacidad:"8GB",
-            memoria:"DDR3",
-            velocidad:"1600MHz",
-            iluminacion:"sin rgb"
-        },
-        precio:30.00,
-        imagen:"./img/MemoriaRamAdata.jpg"
-    },
-    {
-        id: "memoriaRam04",
-        nombre: "MEMORIA 8GB DDR4 KINGSTON FURY RENEGADE RGB BUS 3200MHz BLACK",
-        categoria:{
-            nombre:"Memoria Ram",
-            id:"memoriaRam"
-        },
-        descripcion:{
-            marca:"Kignston",
-            capacidad:"8GB",
-            memoria:"DDR4",
-            velocidad:"3200MHz",
-            iluminacion:"rgb"
-        },
-        precio:38.50,
-        imagen:"./img/MemoriaRamFury.jpg"
-    },
-    {
-        id: "memoriaRam05",
-        nombre: "MEMORIA 16GB DDR5 KINGSTON FURY BEAST WHITE RGB BUS 5200MHz",
-        categoria:{
-            nombre:"Memoria Ram",
-            id:"memoriaRam"
-        },
-        descripcion:{
-            marca:"Kignston",
-            capacidad:"16GB",
-            memoria:"DDR5",
-            velocidad:"5200MHz",
-            iluminacion:"rgb"
-        },
-        precio:75.00,
-        imagen:"./img/MemoriaRamFury2.jpg"
-    },
-    {
-        id: "memoriaRam06",
-        nombre: "MEMORIA 8GB DDR4 T-FORCE VULCAN Z TUF GAMING ALLIANCE BUS 3200MHz",
-        categoria:{
-            nombre:"Memoria Ram",
-            id:"memoriaRam"
-        },
-        descripcion:{
-            marca:"T-Force",
-            capacidad:"8GB",
-            memoria:"DDR4",
-            velocidad:"3200MHz",
-            iluminacion:"rgb"
-        },
-        precio:24.50,
-        imagen:"./img/MemoriaRamTForce.jpg"
-    },
-    {
-        id: "memoriaRam07",
-        nombre: "MEMORIA 16GB DDR4 VIPER GAMING ELITE GRIS CON DISIPADOR BUS 2666Mhz",
-        categoria:{
-            nombre:"Memoria Ram",
-            id:"memoriaRam"
-        },
-        descripcion:{
-            marca:"Viper Gaming",
-            capacidad:"16GB",
-            memoria:"DDR4",
-            velocidad:"2666MHz",
-            iluminacion:"sin rgb"
-        },
-        precio:85.50,
-        imagen:"./img/MemoriaRamViperGaming.jpg"
-    },
-    {
-        id: "memoriaRam08",
-        nombre: "MEMORIA 16GB DDR4 XPG GAMMIX D10 BLACK BUS 3200MHz",
-        categoria:{
-            nombre:"Memoria Ram",
-            id:"memoriaRam"
-        },
-        descripcion:{
-            marca:"Xpg",
-            capacidad:"16GB",
-            memoria:"DDR4",
-            velocidad:"3200MHz",
-            iluminacion:"rgb"
-        },
-        precio:39.50,
-        imagen:"./img/MemoriaRamXPG.jpg"
-    },
-    //Procesadores Intel
-    {
-        id: "procesador01",
-        nombre: "PROCESADOR INTEL CORE I9 10900K 3.70GHZ 20MB",
-        categoria:{
-            nombre:"Procesador",
-            id:"procesador"
-        },
-        descripcion:{
-            marca:"Intel",
-            procesador:"Core I9-10th Gen",
-            nucleos:"10",
-            velocidad:"3.79GHz",
-            cache:"20MB",
-        },
-        precio:590.00,
-        imagen:"./img/ProcesadorIntel.jpg"
-    },
-    {
-        id: "procesador02",
-        nombre: "PROCESADOR INTEL CELERON G6900 3.40GHZ ",
-        categoria:{
-            nombre:"Procesador",
-            id:"procesador"
-        },
-        descripcion:{
-            marca:"Intel",
-            procesador:"Intel Celeron",
-            nucleos:"2",
-            velocidad:"3.4GHz",
-            cache:"4MB",
-        },
-        precio:68.50,
-        imagen:"./img/ProcesadorIntel2.jpg"
-    },
-    {
-        id: "procesador03",
-        nombre: "PROCESADOR INTEL PENTIUM GOLD G5420 3.8GHZ 4.0MB",
-        categoria:{
-            nombre:"Procesador",
-            id:"procesador"
-        },
-        descripcion:{
-            marca:"Intel",
-            procesador:"Intel Pentium",
-            nucleos:"2",
-            velocidad:"3.8GHz",
-            cache:"4MB",
-        },
-        precio:76.80,
-        imagen:"./img/ProcesadorIntel3.jpg"
-    },
-    {
-        id: "procesador04",
-        nombre: "PROCESADOR INTEL CORE I3-10100F 3.6GHZ 6.0MB",
-        categoria:{
-            nombre:"Procesador",
-            id:"procesador"
-        },
-        descripcion:{
-            marca:"Intel",
-            procesador:"Core I3-10th Gen",
-            nucleos:"4",
-            velocidad:"3.6GHz",
-            cache:"6MB",
-        },
-        precio:82.30,
-        imagen:"./img/ProcesadorIntel4.jpg"
-    },
-    {
-        id: "procesador05",
-        nombre: "PROCESADOR INTEL CORE I3 10105F 3.7 GHZ 6MB",
-        categoria:{
-            nombre:"Procesador",
-            id:"procesador"
-        },
-        descripcion:{
-            marca:"Intel",
-            procesador:"Core I3-10th Gen",
-            nucleos:"4",
-            velocidad:"3.7GHz",
-            cache:"6MB",
-        },
-        precio:87.80,
-        imagen:"./img/ProcesadorIntel5.jpg"
-    },
-    {
-        id: "procesador06",
-        nombre: "PROCESADOR INTEL CORE I5 10400F 2.9GHZ - 12MB",
-        categoria:{
-            nombre:"Procesador",
-            id:"procesador"
-        },
-        descripcion:{
-            marca:"Intel",
-            procesador:"Core I5-10th Gen",
-            nucleos:"6",
-            velocidad:"2.9GHz",
-            cache:"12MB",
-        },
-        precio:129.10,
-        imagen:"./img/ProcesadorIntel6.jpg"
-    },
-    //Procesadores AMD
-    {
-        id: "procesador07",
-        nombre: "PROCESADOR AMD RYZEN 5 5600G 3.9GHz 16MB",
-        categoria:{
-            nombre:"Procesador",
-            id:"procesador"
-        },
-        descripcion:{
-            marca:"AMD",
-            procesador:"AMD Ryzen 5",
-            nucleos:"6",
-            velocidad:"3.9GHz",
-            cache:"16MB",
-        },
-        precio:162.00,
-        imagen:"./img/ProcesadorAmd.jpg"
-    },
-    {
-        id: "procesador08",
-        nombre: "PROCESADOR AMD RYZEN 3 3200G 3.6GHZ 6.0MB",
-        categoria:{
-            nombre:"Procesador",
-            id:"procesador"
-        },
-        descripcion:{
-            marca:"AMD",
-            procesador:"AMD Ryzen 3",
-            nucleos:"4",
-            velocidad:"3.6GHz",
-            cache:"6MB",
-        },
-        precio:90.60,
-        imagen:"./img/ProcesadorAmd2.jpg"
-    },
-    {
-        id: "procesador09",
-        nombre: "PROCESADOR AMD RYZEN 5 4500MPK 3.6GHZ",
-        categoria:{
-            nombre:"Procesador",
-            id:"procesador"
-        },
-        descripcion:{
-            marca:"AMD",
-            procesador:"AMD Ryzen 5",
-            nucleos:"6",
-            velocidad:"3.6GHz",
-            cache:"8MB",
-        },
-        precio:129.10,
-        imagen:"./img/ProcesadorAmd3.jpg"
-    },
-    {
-        id: "procesador10",
-        nombre: "PROCESADOR AMD RYZEN 3 PRO 4350G 3.8GHZ",
-        categoria:{
-            nombre:"Procesador",
-            id:"procesador"
-        },
-        descripcion:{
-            marca:"AMD",
-            procesador:"AMD Ryzen 3",
-            nucleos:"4",
-            velocidad:"3.8GHz",
-            cache:"4MB",
-        },
-        precio:118.10,
-        imagen:"./img/ProcesadorAmd4.jpg"
-    },
-    {
-        id: "procesador11",
-        nombre: "PROCESADOR AMD RYZEN 5 4600G 3.7GHZ",
-        categoria:{
-            nombre:"Procesador",
-            id:"procesador"
-        },
-        descripcion:{
-            marca:"AMD",
-            procesador:"AMD Ryzen 5",
-            nucleos:"6",
-            velocidad:"3.7GHz",
-            cache:"8MB",
-        },
-        precio:134.60,
-        imagen:"./img/ProcesadorAmd5.jpg"
-    },
-    //Placas madre Intel
-    {
-        id: "placaMadre01",
-        nombre: "MAINBOARD GIGABYTE H470M H DDR4 LGA 1200",
-        categoria:{
-            nombre:"Placa Madre",
-            id:"placaMadre"
-        },
-        descripcion:{
-            marca:"Gigabyte",
-            socket:"LGA 1200",
-            capacidadMax:"64GB",
-            expansion:"2",
-            iluminacion:"sin rgb"
-        },
-        precio:79.60,
-        imagen:"./img/PlacaMadreIntel2.jpg"
-    },
-    {
-        id: "placaMadre02",
-        nombre: "MAINBOARD MSI B560M PRO-E LGA 1200",
-        categoria:{
-            nombre:"Placa Madre",
-            id:"placaMadre"
-        },
-        descripcion:{
-            marca:"MSI",
-            socket:"LGA 1200",
-            capacidadMax:"64GB",
-            expansion:"2",
-            iluminacion:"sin rgb"
-        },
-        precio:90.60,
-        imagen:"./img/PlacaMadreIntel3.jpg"
-    },
-    {
-        id: "placaMadre03",
-        nombre: "MAINBOARD MSI PRO H610M-G DDR4 LGA1700",
-        categoria:{
-            nombre:"Placa Madre",
-            id:"placaMadre"
-        },
-        descripcion:{
-            marca:"MSI",
-            socket:"LGA 1700",
-            capacidadMax:"64GB",
-            expansion:"2",
-            iluminacion:"sin rgb"
-        },
-        precio:93.30,
-        imagen:"./img/PlacaMadreIntel4.jpg"
-    },
-    {
-        id: "placaMadre04",
-        nombre: "MAINBOARD ASUS PRIME H610M-K D4",
-        categoria:{
-            nombre:"Placa Madre",
-            id:"placaMadre"
-        },
-        descripcion:{
-            marca:"ASUS",
-            socket:"LGA 1700",
-            capacidadMax:"64GB",
-            expansion:"2",
-            iluminacion:"sin rgb"
-        },
-        precio:115.30,
-        imagen:"./img/PlacaMadreIntel.jpg"
-    },
-    //Placas madre AMD
-    {
-        id: "placaMadre05",
-        nombre: "MAINBOARD ASUS PRIME B650M-A WIFI",
-        categoria:{
-            nombre:"Placa Madre",
-            id:"placaMadre"
-        },
-        descripcion:{
-            marca:"ASUS",
-            socket:"AM5",
-            capacidadMax:"128GB",
-            expansion:"4",
-            iluminacion:"rgb"
-        },
-        precio:241.90,
-        imagen:"./img/PlacaMadreAmd.jpg"
-    },
-    {
-        id: "placaMadre06",
-        nombre: "MAINBOARD MSI A320M-A PRO AM4",
-        categoria:{
-            nombre:"Placa Madre",
-            id:"placaMadre"
-        },
-        descripcion:{
-            marca:"MSI",
-            socket:"AM4",
-            capacidadMax:"64GB",
-            expansion:"2",
-            iluminacion:"sin rgb"
-        },
-        precio:54.80,
-        imagen:"./img/PlacaMadreAmd2.jpg"
-    },
-    {
-        id: "placaMadre07",
-        nombre: "MAINBOARD MSI A520M-A PRO AM4",
-        categoria:{
-            nombre:"Placa Madre",
-            id:"placaMadre"
-        },
-        descripcion:{
-            marca:"MSI",
-            socket:"AM4",
-            capacidadMax:"64GB",
-            expansion:"2",
-            iluminacion:"sin rgb"
-        },
-        precio:76.80,
-        imagen:"./img/PlacaMadreAmd3.jpg"
-    },
-    {
-        id: "placaMadre08",
-        nombre: "MAINBOARD GIGABYTE B450M DS3H V2 AM4",
-        categoria:{
-            nombre:"Placa Madre",
-            id:"placaMadre"
-        },
-        descripcion:{
-            marca:"Gigabyte",
-            socket:"AM4",
-            capacidadMax:"128GB",
-            expansion:"4",
-            iluminacion:"sin rgb"
-        },
-        precio:90.60,
-        imagen:"./img/PlacaMadreAmd4.jpg"
-    },
-    {
-        id: "placaMadre09",
-        nombre: "MAINBOARD GIGABYTE B550M K DDR4 AM4",
-        categoria:{
-            nombre:"Placa Madre",
-            id:"placaMadre"
-        },
-        descripcion:{
-            marca:"Gigabyte",
-            socket:"AM4",
-            capacidadMax:"128GB",
-            expansion:"4",
-            iluminacion:"sin rgb"
-        },
-        precio:112.60,
-        imagen:"./img/PlacaMadreAmd5.jpg"
-    },
-    //Fuentes de poder
-    {
-        id: "fuenteDePoder01",
-        nombre: "FUENTE COOLER MASTER MWE 750 V2 750W 80 PLUS GOLD",
-        categoria:{
-            nombre:"Fuente de Poder",
-            id:"fuenteDePoder"
-        },
-        descripcion:{
-            marca:"Cooler Master",
-            certificado:"80 Plus Gold",
-            watts:"750w"
-        },
-        precio:112.00,
-        imagen:"./img/FuenteDePoder.jpg"
-    },
-    {
-        id: "fuenteDePoder02",
-        nombre: "FUENTE MSI MAG A650BN 650W 80 PLUS BRONZE",
-        categoria:{
-            nombre:"Fuente de Poder",
-            id:"fuenteDePoder"
-        },
-        descripcion:{
-            marca:"MSI",
-            certificado:"80 Plus Bronze",
-            watts:"650w"
-        },
-        precio:72.00,
-        imagen:"./img/FuenteDePoder2.jpg"
-    },
-    {
-        id: "fuenteDePoder03",
-        nombre: "FUENTE ANTRYX B500 V3 500W BLACK",
-        categoria:{
-            nombre:"Fuente de Poder",
-            id:"fuenteDePoder"
-        },
-        descripcion:{
-            marca:"ANTRYX",
-            watts:"500w"
-        },
-        precio:29.00,
-        imagen:"./img/FuenteDePoder3.jpg"
-    },
-    {
-        id: "fuenteDePoder04",
-        nombre: "FUENTE KOLINK CORE 500W 80 PLUS WHITE",
-        categoria:{
-            nombre:"Fuente de Poder",
-            id:"fuenteDePoder"
-        },
-        descripcion:{
-            marca:"KOLINK",
-            certificado:"80 Plus White",
-            watts:"500w"
-        },
-        precio:40.00,
-        imagen:"./img/FuenteDePoder4.jpg"
-    },
-    {
-        id: "fuenteDePoder05",
-        nombre: "FUENTE GIGABYTE P550B 550W 80 PLUS BRONZE",
-        categoria:{
-            nombre:"Fuente de Poder",
-            id:"fuenteDePoder"
-        },
-        descripcion:{
-            marca:"Gigabyte",
-            certificado:"80 Plus Bronze",
-            watts:"550w"
-        },
-        precio:55.50,
-        imagen:"./img/FuenteDePoder5.jpg"
-    },
-    {
-        id: "fuenteDePoder06",
-        nombre: "FUENTE GIGABYTE P650G 650W 80 PLUS GOLD",
-        categoria:{
-            nombre:"Fuente de Poder",
-            id:"fuenteDePoder"
-        },
-        descripcion:{
-            marca:"Gigabyte",
-            certificado:"80 Plus gold",
-            watts:"650w"
-        },
-        precio:77.00,
-        imagen:"./img/FuenteDePoder6.jpg"
-    },
-    {
-        id: "fuenteDePoder07",
-        nombre: "FUENTE ANTRYX KIRIN 650W 80 PLUS BRONZE",
-        categoria:{
-            nombre:"Fuente de Poder",
-            id:"fuenteDePoder"
-        },
-        descripcion:{
-            marca:"ANTRYX",
-            certificado:"80 Plus Bronze",
-            watts:"650w"
-        },
-        precio:61.50,
-        imagen:"./img/FuenteDePoder7.jpg"
-    },
-    {
-        id: "fuenteDePoder08",
-        nombre: "FUENTE COOLER MASTER MWE 550 V2 550W 80 PLUS BRONZE ",
-        categoria:{
-            nombre:"Fuente de Poder",
-            id:"fuenteDePoder"
-        },
-        descripcion:{
-            marca:"Cooler Master",
-            certificado:"80 Plus Bronze",
-            watts:"550w"
-        },
-        precio:65.00,
-        imagen:"./img/FuenteDePoder8.jpg"
-    },
-    {
-        id: "fuenteDePoder09",
-        nombre: "FUENTE COOLER MASTER MWE V2 750W 80 PLUS BRONZE ",
-        categoria:{
-            nombre:"Fuente de Poder",
-            id:"fuenteDePoder"
-        },
-        descripcion:{
-            marca:"Cooler Master",
-            certificado:"80 Plus Bronze",
-            watts:"750w"
-        },
-        precio:85.00,
-        imagen:"./img/FuenteDePoder9.jpg"
-    },
-    {
-        id: "fuenteDePoder10",
-        nombre: "FUENTE COOLER MASTER V1100 SFX 1100W 80 PLUS PLATINUM FULL MODULAR",
-        categoria:{
-            nombre:"Fuente de Poder",
-            id:"fuenteDePoder"
-        },
-        descripcion:{
-            marca:"Cooler Master",
-            certificado:"80 Plus Platinum",
-            watts:"1100w"
-        },
-        precio:435.00,
-        imagen:"./img/FuenteDePoder10.jpg"
-    },
-];
+// Cargar el archivo JSON
+let producto = [];
+async function cargarJson() {
+    try {
+        const response = await fetch("./datos.json");
+        producto = await response.json();
+        loadProducts(producto);
+    } catch (e) {
+        console.error("Error al cargar los datos\n", e);
+    }
+}
+cargarJson();
+
+
 /*Definiendo las variables*/
-const productContainer=document.querySelector('#productContainer'),
-    botnCategory=document.querySelectorAll(".categorybotn"),
-    titleMain=document.querySelector("#titleMain"),
-    windowModal=document.getElementById('windowModal'),
-    windowContainer=document.getElementById('windowContainer'),
-    closeButton=document.getElementById('closeButton'),
-    productModal=document.querySelector('#productModal');
-let botnView=document.querySelectorAll(".tooltip"),
-    botnAdd=document.querySelectorAll(".botnAdd"),
-    numProductsCart=document.querySelector('.numProductsCart');
-let carrito;
-let cantProduct=1,
-    productsCart=0;
+const productContainer = document.querySelector('#productContainer'),
+    botnCategory = document.querySelectorAll(".categorybotn"),
+    titleMain = document.querySelector("#titleMain"),
+    windowModal = document.getElementById('windowModal'),
+    windowContainer = document.getElementById('windowContainer'),
+    closeButton = document.getElementById('closeButton'),
+    productModal = document.querySelector('#productModal'),
+    detallesCategory = document.getElementById('detallesCategory'),
+    search = document.getElementById('search'),
+    productSearchClass = document.querySelector('.productSearch'),
+    productSearch = document.querySelector('#productSearch'),
+    containerSearch = document.querySelector('.containerSearch'),
+    rangeInput = document.querySelectorAll(".rangeInput input"),
+    priceInput = document.querySelectorAll(".priceInput input"),
+    range = document.querySelector(".slider .progress");
+let botnView = document.querySelectorAll(".tooltip"),
+    botnAdd = document.querySelectorAll(".botnAdd"),
+    numProductsCart = document.querySelector('.numProductsCart');
+let carrito = [];
+let cantProduct = 1,
+    productsCart = 0,
+    priceGap = 10;
+/*Cargando el aside de filtros*/
+function loadCategorys(detalles) {
+
+    detallesCategory.innerHTML = "";
+    const propiedadesDescripcion = new Set();
+    detalles.forEach(p => {
+        for (const clave in p.descripcion) {
+            propiedadesDescripcion.add(clave.charAt(0).toUpperCase() + clave.slice(1));
+        }
+    });
+
+    let indice = 0;
+    Array.from(propiedadesDescripcion).forEach(a => {
+        const descripciones = new Set();
+        const divContent = document.createElement("div");
+        divContent.classList.add("content");
+        divContent.setAttribute("data-id", a.toLowerCase());
+        detalles.forEach(p => {
+            for (const clave in p.descripcion) {
+                if (clave.toLowerCase() == a.toLowerCase()) {
+                    descripciones.add(p.descripcion[clave].charAt(0).toUpperCase() + p.descripcion[clave].slice(1));
+                }
+            }
+        });
+
+        Array.from(descripciones).forEach(d => {
+            if (a == "Marca") {
+                const ulMarca = document.createElement("ul");
+                ulMarca.classList.add("checkboxMarca");
+                ulMarca.innerHTML = `
+                    <li class="buttonMarca" data-id="${d.toLowerCase()}">${d}</li>
+                `;
+                divContent.append(ulMarca);
+            } else {
+                const divDes = document.createElement("div");
+                divDes.classList.add("checkbox");
+                divDes.innerHTML = `
+                    <input type="checkbox" id="myCheckbox${indice}" class="myCheckbox" data-id="${d.toLowerCase()}">
+                    <label for="myCheckbox${indice}">${d}</label>
+                `;
+                divContent.append(divDes);
+                indice++;
+            }
+        });
+        const div = document.createElement("div");
+        div.classList.add("description");
+        if (a == "Procesador") {
+            div.id = "divProcesador";
+        }
+        div.innerHTML = `
+            <h2>${a}</h2>
+            ${divContent.outerHTML}
+        `;
+        detallesCategory.append(div);
+    });
+    const buttonMarca = document.querySelectorAll('.buttonMarca');
+    const checkboxes = document.querySelectorAll('.myCheckbox');
+    const divProcesador = document.getElementById('divProcesador');
+    function procesadorFiltro(filtro){
+        let indice=100;
+        divProcesador.innerHTML = "<h2>Procesador</h2>";
+        const divPros = document.createElement("div");
+        divPros.classList.add("content");
+        const arrayProcesador=new Set();
+        detalles.forEach(d=>{
+            if(d.descripcion.marca.toLowerCase()==filtro.target.dataset.id){
+                arrayProcesador.add(d.descripcion.procesador);
+            }
+        });
+        Array.from(arrayProcesador).forEach(a=>{
+            const div=document.createElement("div");
+            div.classList.add("checkbox");
+            div.innerHTML = `
+                <input type="checkbox" id="myCheckbox${indice}" class="myCheckbox" data-id="${a.toLowerCase()}">
+                <label for="myCheckbox${indice}">${a}</label>
+            `;
+            divPros.append(div);
+            indice--;
+        });
+        divProcesador.appendChild(divPros);
+    }
+    let arrayMarcas = [];
+    buttonMarca.forEach(b => {
+        b.addEventListener('click', function (e) {
+            buttonMarca.forEach(botn => botn.classList.remove("selected"));
+            e.currentTarget.classList.add("selected");
+            arrayMarcas = detalles.filter(d => d.descripcion.marca.toLowerCase() == e.target.dataset.id);
+            checkboxes.forEach(c => {
+                c.checked = false;
+            });
+            if (e.target.dataset.id =="intel") {
+                procesadorFiltro(e);
+            } else if (e.target.dataset.id == "amd") {
+                procesadorFiltro(e);
+            }
+            loadProducts(arrayMarcas);
+        });
+    });
+    /*Eventos de los checkbox*/
+    checkboxes.forEach(c => {
+        c.addEventListener('change', (e) => {
+            console.log(e.target.dataset.id)
+            if (arrayMarcas.length == 0) {
+                detalles.forEach(d => {
+                    console.log(d.descripcion)
+                })
+                console.log(detalles);
+            } else {
+                detalles.forEach(d => {
+                    console.log(d.descripcion)
+                })
+                console.log(arrayMarcas);
+            }
+        });
+    });
+
+
+    // const array=[];
+    // checkboxes.forEach(c => {
+    //     c.addEventListener('change', (e) => {
+
+    //         let dataId=(e.currentTarget.parentNode).parentNode.dataset.id.toLowerCase();
+    //         detalles.forEach(d=>{
+    //             for(const clave in d.descripcion){
+    //                 if(clave.toLowerCase()==dataId && d.descripcion[clave].toLowerCase()==e.target.dataset.id.toLowerCase()){
+    //                     if(e.target.checked){
+    //                         if(array.includes(d)){
+
+    //                         }
+    //                         array.push(d);
+    //                     }else{
+    //                         array.splice(array.indexOf(d),1);
+    //                     }
+    //                 }
+    //             }
+    //         });
+    //         const arrayaux= new Set(array);
+    //         array.length==0? loadProducts(detalles):loadProducts(Array.from(arrayaux));
+    //     });
+    // });
+
+}
 
 /*Funcion para cargar los productos segun la categoria elegida*/
-function loadProducts(productSelect){
-    productContainer.innerHTML="";
-    productSelect.forEach(p=>{
-        const div=document.createElement("div");
+function loadProducts(productSelect) {
+    productContainer.innerHTML = "";
+    productSelect.forEach(p => {
+        const div = document.createElement("div");
         div.classList.add("product");
-        div.innerHTML=`
+        div.innerHTML = `
             <div class="iconoCapa">
                 <img src="${p.imagen}" alt="${p.categoria.nombre}">
-                <div class="tooltip" id="${p.id}">
+                <div class="tooltip" data-id="${p.id}">
                     <span class="tooltipTop">Vista rápida</span>
                     <i class="fa-regular fa-eye"></i>
                 </div>
@@ -669,57 +201,60 @@ function loadProducts(productSelect){
         productContainer.append(div);
     });
     actualizarBotonesAgregar();
-    botnView=document.querySelectorAll(".tooltip");
-    botnView.forEach(botn=>{
-        botn.addEventListener('click',modalWindowView);
+    botnView = document.querySelectorAll(".tooltip");
+    botnView.forEach(botn => {
+        botn.addEventListener('click', modalWindowView);
     });
 }
-loadProducts(producto);
 
 /*Botones de las categorias*/
-botnCategory.forEach(botn=>{
-    botn.addEventListener("click", (e) =>{
-        botnCategory.forEach(botn=>botn.classList.remove("selected"));
+botnCategory.forEach(botn => {
+    botn.addEventListener("click", (e) => {
+        botnCategory.forEach(botn => botn.classList.remove("selected"));
+        console.log(e.currentTarget)
         e.currentTarget.classList.add("selected");
 
-        if(e.currentTarget.id!="todos"){
-            const productCategory=producto.find(producto=>producto.categoria.id===e.currentTarget.id);
-            titleMain.innerText=productCategory.categoria.nombre;
-            const productsBotn=producto.filter(producto=>producto.categoria.id===e.currentTarget.id);
+        if (e.currentTarget.id != "todos") {
+            const productCategory = producto.find(producto => producto.categoria.id === e.currentTarget.id);
+            titleMain.innerText = productCategory.categoria.nombre;
+            const productsBotn = producto.filter(producto => producto.categoria.id === e.currentTarget.id);
             loadProducts(productsBotn);
-        }else{
-            titleMain.innerText="Todos los productos";
+            loadCategorys(productsBotn);
+        } else {
+            titleMain.innerText = "Todos los productos";
             loadProducts(producto);
+            loadCategorys([]);
         }
-        
+
     });
 });
 
 /*Funcion para abrir venta de vista rapida del producto*/
-function modalWindowView(e){
-    windowModal.style.display='flex';
-        productModal.innerHTML="";
-        producto.forEach(p=>{
-            if(e.currentTarget.id==p.id){
-                const div=document.createElement("div");
-                div.classList.add("viewProductModal");
-                const ul = document.createElement("ul");
-                for (const clave in p.descripcion) {
-                    if (p.descripcion.hasOwnProperty(clave)) {
-                        const valor = p.descripcion[clave];
-                        const li = document.createElement("li");
-                        li.textContent = (clave.charAt(0).toUpperCase() + clave.slice(1)) + ": " + valor;
-                        ul.appendChild(li);
-                    }
+function modalWindowView(e) {
+    windowModal.style.display = 'flex';
+    productModal.innerHTML = "";
+    producto.forEach(p => {
+        if (e.currentTarget.dataset.id == p.id) {
+            const div = document.createElement("div");
+            div.classList.add("viewProductModal");
+            const ul = document.createElement("ul");
+            for (const clave in p.descripcion) {
+                if (p.descripcion.hasOwnProperty(clave)) {
+                    const valor = p.descripcion[clave];
+                    const li = document.createElement("li");
+                    li.textContent = (clave.charAt(0).toUpperCase() + clave.slice(1)) + ": " + valor;
+                    ul.appendChild(li);
                 }
-                div.innerHTML=`
-                <figure>
-                    <img src="${p.imagen}" alt="${p.categoria.nombre}">
-                </figure>
+            }
+            div.innerHTML = `
+                <div class="zoom">
+                    <img src="${p.imagen}" alt="${p.categoria.nombre}" class="imgPre">
+                    <img src="${p.imagen}" alt="${p.categoria.nombre}" id="imgZoom">
+                </div>
                 <div class="productInfoModal">
                     <h2 class="titleModal">${p.nombre}</h2>
                     ${ul.outerHTML}
-                    <p>Precio: $${p.precio}</p>
+                    <p>Precio: $${(p.precio).toFixed(2)}</p>
                     <div class="botnModal">
                         <div class="botnCant">
                             <span class="minus">-</span>
@@ -730,78 +265,228 @@ function modalWindowView(e){
                     </div>
                 </div>
                 `;
-                productModal.append(div);
-            };
-        });
-        actualizarBotonesAgregar();
-        
-        /*Varibales y eventos de los botones + y - dentro de la ventana de vista rapida*/
-        let numCant=document.querySelector('.numCant'),
-            plus=document.querySelector('.plus'),
-            minus=document.querySelector('.minus');
-        plus.addEventListener('click',()=>{
-            cantProduct++;
-            numCant.innerText=cantProduct;
-        });
-        minus.addEventListener('click',()=>{
-            if(cantProduct>1){
-                cantProduct--;
-                numCant.innerText=cantProduct;
-            }
-        });
+            productModal.append(div);
+        };
+    });
+    actualizarBotonesAgregar();
+
+    /*Varibales y eventos de los botones + y - dentro de la ventana de vista rapida*/
+    let numCant = document.querySelector('.numCant'),
+        plus = document.querySelector('.plus'),
+        minus = document.querySelector('.minus');
+    plus.addEventListener('click', () => {
+        cantProduct++;
+        numCant.innerText = cantProduct;
+    });
+    minus.addEventListener('click', () => {
+        if (cantProduct > 1) {
+            cantProduct--;
+            numCant.innerText = cantProduct;
+        }
+    });
+    /*Variable y eventos para el efecto zoom de la ventana modal*/
+    let zoom = document.querySelector('.zoom');
+    let imgZoom = document.getElementById('imgZoom');
+    zoom.addEventListener('mousemove', (event) => {
+        imgZoom.style.opacity = 1;
+        let positionPx = event.x - zoom.getBoundingClientRect().left;
+        let positionX = (positionPx / zoom.offsetWidth) * 100;
+
+        let positionPy = event.y - zoom.getBoundingClientRect().top;
+        let positionY = (positionPy / zoom.offsetHeight) * 100;
+
+        imgZoom.style.setProperty('--zoom-x', positionX + '%');
+        imgZoom.style.setProperty('--zoom-y', positionY + '%');
+
+        let transformX = -(positionX - 50) / 3.5;
+        let transformY = -(positionY - 50) / 3.5;
+        imgZoom.style.transform = `scale(1.5) translateX(${transformX}%) translateY(${transformY}%)`;
+    });
+    zoom.addEventListener('mouseout', () => {
+        imgZoom.style.opacity = 0;
+    });
 }
 /*Funcion para renderizar botones COMPRAR*/
-function actualizarBotonesAgregar(){
-    botnAdd=document.querySelectorAll(".botnAdd");
-    botnAdd.forEach(botn=>{
-        botn.addEventListener('click',agregarCarrito);
+function actualizarBotonesAgregar() {
+    botnAdd = document.querySelectorAll(".botnAdd");
+    botnAdd.forEach(botn => {
+        botn.addEventListener('click', agregarCarrito);
     });
-    
+
 }
 /*Funcion para agregar productos al carrito y guardarlo en almacenamiento local*/
-function agregarCarrito(e){
-    const enCarrito=carrito.find(p=>p.id==e.currentTarget.id);
-    if(enCarrito){
-        enCarrito.cantidad+=cantProduct;
-        console.log(enCarrito.cantidad);
-    }else{
+function agregarCarrito(e) {
+    const enCarrito = carrito.find(p => p.id == e.currentTarget.id);
+    let nombre;
+    if (enCarrito) {
+        enCarrito.cantidad += cantProduct;
+        nombre = enCarrito.nombre;
+    } else {
         let findProduct = producto.find(p => p.id == e.currentTarget.id);
-        findProduct.cantidad=cantProduct;
+        findProduct.cantidad = cantProduct;
+        nombre = findProduct.nombre;
         carrito.push(findProduct);
     }
-    productsCart+=cantProduct;
-    if(productsCart<10){
-        numProductsCart.innerText="0"+productsCart;
-    }else{
-        numProductsCart.innerText=productsCart;
-    }
-    localStorage.setItem("carrito",JSON.stringify(carrito));
+    Toastify({
+        text: nombre + " fue agregado!!",
+        close: true,
+        duration: 2000,
+        gravity: "bottom",
+        position: "left",
+        style: {
+            background: "linear-gradient(to right, #16578b, #3178b3)",
+            color: "#fff",
+        },
+        onClick: function () {
+            this.duration = 0;
+        }
+    }).showToast();
+    productsCart += cantProduct;
+    numProductsCart.innerText = productsCart < 10 ? ("0" + productsCart) : productsCart;
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
 }
 
 /*Funcion para cerrar venta de vista rapida*/
-const closeWindow=()=>{
+const closeWindow = () => {
     windowContainer.classList.add('close');
 
-    setTimeout(()=>{
+    setTimeout(() => {
         windowContainer.classList.remove('close');
-        windowModal.style.display='none';
-    },500);
-    cantProduct=1;
+        windowModal.style.display = 'none';
+    }, 500);
+    cantProduct = 1;
 };
-closeButton.addEventListener('click',()=>closeWindow());
-window.addEventListener('click',e=>e.target==windowModal&&closeWindow());
+closeButton.addEventListener('click', () => closeWindow());
+window.addEventListener('click', e => e.target == windowModal && closeWindow());
+
 
 /*Obteniendo datos del carrito, del almacenamiento local*/
-let productsInCart=localStorage.getItem("carrito")
-if(productsInCart){
-    carrito=JSON.parse(productsInCart);
-    if(carrito.reduce((acc,c)=> acc+c.cantidad,0)<10){
-        numProductsCart.innerText="0"+carrito.reduce((acc,c)=> acc+c.cantidad,0);
-    }else{
-        numProductsCart.innerText=carrito.reduce((acc,c)=> acc+c.cantidad,0);
-    }
-}else{
-    carrito=[];
-}
-productsCart=carrito.reduce((acc,c)=> acc+c.cantidad,0);
+let productsInCart = localStorage.getItem("carrito")
+carrito = JSON.parse(productsInCart) || [];
+numProductsCart.innerText = carrito.reduce((acc, c) => acc + c.cantidad, 0) < 10 ? ("0" + carrito.reduce((acc, c) => acc + c.cantidad, 0)) : carrito.reduce((acc, c) => acc + c.cantidad, 0);
+productsCart = carrito.reduce((acc, c) => acc + c.cantidad, 0);
 
+
+/*Funcion para cargar los productos en el buscador*/
+function buscador(e) {
+    const palabra = e.value.toLowerCase();
+    const results = producto.filter(p => {
+        return Object.values(p).some(value => {
+            if (typeof value === 'object') {
+                return Object.values(value).some(v => v.toLowerCase().includes(palabra));
+            } else if (typeof value === 'string') {
+                return value.toLowerCase().includes(palabra);
+            }
+            return false;
+        });
+    });
+    if (results.length > 0) {
+        loadSearch(results);
+    } else {
+        productSearch.innerHTML = "";
+        const p = document.createElement("p");
+        p.classList.add("searchNone");
+        p.innerHTML = `
+            <p>No se encontaron resultados para "${palabra}"</p>
+        `;
+        productSearch.append(p);
+    }
+    productSearchClass.style.display = "block";
+}
+/*Eventos del buscador al hacer click y al escribir*/
+search.addEventListener('click', function () {
+    buscador(search);
+});
+search.addEventListener('keyup', function () {
+    buscador(search);
+});
+/*Dejar de mostrar productos del buscador al dejar de seleccionar el buscador*/
+document.addEventListener('click', function (event) {
+    const target = event.target;
+    if (!containerSearch.contains(target)) {
+        productSearchClass.style.display = 'none';
+    }
+});
+/*Cargando productos del buscador*/
+function loadSearch(product) {
+    productSearch.innerHTML = "";
+    product.forEach(p => {
+        const div = document.createElement("div");
+        div.classList.add("viewSearch");
+        div.setAttribute("data-id", p.id);
+        div.innerHTML = `
+            <img src="${p.imagen}" alt="${p.imagen}">
+            <p>${p.nombre}</p>
+            <p>$${(p.precio).toFixed(2)}</p>
+        `;
+        productSearch.append(div);
+    });
+    /*Ventana modal al presionar producto del buscador*/
+    let viewSearch = document.querySelectorAll('.viewSearch');
+    viewSearch.forEach(vs => {
+        vs.addEventListener('click', function (event) {
+            productSearch.style.display = 'none';
+            modalWindowView(event);
+        });
+    });
+}
+
+/*Funcion para el boton ir arriba*/
+window.onscroll = function () {
+    if (document.documentElement.scrollTop > 100) {
+        document.querySelector('.goTopContainer').classList.add('show');
+    } else {
+        document.querySelector('.goTopContainer').classList.remove('show');
+    }
+}
+document.querySelector('.goTopContainer').addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+/*Eventos para barra de rango de precio*/
+priceInput.forEach(input => {
+    input.addEventListener("input", e => {
+        let minPrice = parseInt(priceInput[0].value),
+            maxPrice = parseInt(priceInput[1].value);
+
+
+        if ((maxPrice - minPrice >= priceGap) && maxPrice <= rangeInput[1].max) {
+            if (e.target.className === "inputMin") {
+                rangeInput[0].value = minPrice;
+                range.style.left = ((minPrice / rangeInput[0].max) * 100) + "%";
+            } else {
+                rangeInput[1].value = maxPrice;
+                range.style.right = 100 - (maxPrice / rangeInput[1].max) * 100 + "%";
+            }
+        }
+        const productsPrice = producto.filter(p => (p.precio < maxPrice && p.precio > minPrice));
+        loadProducts(productsPrice);
+    });
+});
+
+rangeInput.forEach(input => {
+    input.addEventListener("input", e => {
+        let minVal = parseInt(rangeInput[0].value),
+            maxVal = parseInt(rangeInput[1].value);
+
+
+        if ((maxVal - minVal) < priceGap) {
+            if (e.target.className === "rangeMin") {
+                rangeInput[0].value = maxVal - priceGap
+            } else {
+                rangeInput[1].value = minVal + priceGap;
+            }
+        } else {
+            priceInput[0].value = minVal;
+            priceInput[1].value = maxVal;
+            range.style.left = ((minVal / rangeInput[0].max) * 100) + "%";
+            range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+        }
+        const productsPrice = producto.filter(p => (p.precio > minVal && p.precio < maxVal));
+        loadProducts(productsPrice);
+    });
+});
