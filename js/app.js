@@ -35,6 +35,7 @@ let carrito = [];
 let cantProduct = 1,
     productsCart = 0,
     priceGap = 10;
+let filtros = {};
 /*Cargando el aside de filtros*/
 function loadCategorys(detalles) {
 
@@ -42,7 +43,7 @@ function loadCategorys(detalles) {
     const propiedadesDescripcion = new Set();
     detalles.forEach(p => {
         for (const clave in p.descripcion) {
-            propiedadesDescripcion.add(clave.charAt(0).toUpperCase() + clave.slice(1));
+            propiedadesDescripcion.add(clave);
         }
     });
 
@@ -51,29 +52,31 @@ function loadCategorys(detalles) {
         const descripciones = new Set();
         const divContent = document.createElement("div");
         divContent.classList.add("content");
-        divContent.setAttribute("data-id", a.toLowerCase());
+        divContent.setAttribute("data-propiedad", a);
         detalles.forEach(p => {
             for (const clave in p.descripcion) {
-                if (clave.toLowerCase() == a.toLowerCase()) {
-                    descripciones.add(p.descripcion[clave].charAt(0).toUpperCase() + p.descripcion[clave].slice(1));
+                if (clave == a) {
+                    // console.log(a);
+                    // console.log(clave);
+                    descripciones.add(p.descripcion[clave]);
                 }
             }
         });
 
         Array.from(descripciones).forEach(d => {
-            if (a == "Marca") {
+            if (a == "marca") {
                 const ulMarca = document.createElement("ul");
                 ulMarca.classList.add("checkboxMarca");
                 ulMarca.innerHTML = `
-                    <li class="buttonMarca" data-id="${d.toLowerCase()}">${d}</li>
+                    <li class="buttonMarca" data-id="${d}">${d}</li>
                 `;
                 divContent.append(ulMarca);
             } else {
                 const divDes = document.createElement("div");
                 divDes.classList.add("checkbox");
                 divDes.innerHTML = `
-                    <input type="checkbox" id="myCheckbox${indice}" class="myCheckbox" data-id="${d.toLowerCase()}">
-                    <label for="myCheckbox${indice}">${d}</label>
+                    <input type="checkbox" id="myCheckbox${indice}" class="myCheckbox" data-id="${d}">
+                    <label for="myCheckbox${indice}">${d.charAt(0).toUpperCase() + d.slice(1)}</label>
                 `;
                 divContent.append(divDes);
                 indice++;
@@ -81,11 +84,11 @@ function loadCategorys(detalles) {
         });
         const div = document.createElement("div");
         div.classList.add("description");
-        if (a == "Procesador") {
+        if (a == "procesador") {
             div.id = "divProcesador";
         }
         div.innerHTML = `
-            <h2>${a}</h2>
+            <h2>${a.charAt(0).toUpperCase() + a.slice(1)}</h2>
             ${divContent.outerHTML}
         `;
         detallesCategory.append(div);
@@ -93,23 +96,25 @@ function loadCategorys(detalles) {
     const buttonMarca = document.querySelectorAll('.buttonMarca');
     const checkboxes = document.querySelectorAll('.myCheckbox');
     const divProcesador = document.getElementById('divProcesador');
-    function procesadorFiltro(filtro){
-        let indice=100;
+
+    function procesadorFiltro(filtro) {
+        let indice = 100;
         divProcesador.innerHTML = "<h2>Procesador</h2>";
         const divPros = document.createElement("div");
         divPros.classList.add("content");
-        const arrayProcesador=new Set();
-        detalles.forEach(d=>{
-            if(d.descripcion.marca.toLowerCase()==filtro.target.dataset.id){
+        divPros.setAttribute("data-propiedad", "procesador");
+        const arrayProcesador = new Set();
+        detalles.forEach(d => {
+            if (d.descripcion.marca == filtro.target.dataset.id) {
                 arrayProcesador.add(d.descripcion.procesador);
             }
         });
-        Array.from(arrayProcesador).forEach(a=>{
-            const div=document.createElement("div");
+        Array.from(arrayProcesador).forEach(a => {
+            const div = document.createElement("div");
             div.classList.add("checkbox");
             div.innerHTML = `
-                <input type="checkbox" id="myCheckbox${indice}" class="myCheckbox" data-id="${a.toLowerCase()}">
-                <label for="myCheckbox${indice}">${a}</label>
+                <input type="checkbox" id="myCheckbox${indice}" class="myCheckbox" data-id="${a}">
+                <label for="myCheckbox${indice}">${a.charAt(0).toUpperCase() + a.slice(1)}</label>
             `;
             divPros.append(div);
             indice--;
@@ -121,60 +126,87 @@ function loadCategorys(detalles) {
         b.addEventListener('click', function (e) {
             buttonMarca.forEach(botn => botn.classList.remove("selected"));
             e.currentTarget.classList.add("selected");
-            arrayMarcas = detalles.filter(d => d.descripcion.marca.toLowerCase() == e.target.dataset.id);
+            arrayMarcas = detalles.filter(d => d.descripcion.marca == e.target.dataset.id);
             checkboxes.forEach(c => {
                 c.checked = false;
             });
-            if (e.target.dataset.id =="intel") {
+            if (e.target.dataset.id == "Intel") {
                 procesadorFiltro(e);
-            } else if (e.target.dataset.id == "amd") {
+            } else if (e.target.dataset.id == "AMD") {
                 procesadorFiltro(e);
             }
             loadProducts(arrayMarcas);
         });
     });
     /*Eventos de los checkbox*/
-    checkboxes.forEach(c => {
-        c.addEventListener('change', (e) => {
-            console.log(e.target.dataset.id)
-            if (arrayMarcas.length == 0) {
-                detalles.forEach(d => {
-                    console.log(d.descripcion)
-                })
-                console.log(detalles);
+    checkboxes.forEach((c) => {
+        c.addEventListener("change", (e) => {
+            const resultados=[];
+            const propiedad = e.target.parentElement.parentElement.dataset.propiedad;
+            const valor = e.target.dataset.id;
+            let condicionalResult="";
+            if (filtros[valor]) {
+                delete filtros[valor];
             } else {
-                detalles.forEach(d => {
-                    console.log(d.descripcion)
-                })
-                console.log(arrayMarcas);
+                filtros[valor] = propiedad;
             }
+            console.log(Object.keys(filtros).length)
+            if(Object.keys(filtros).length!=0){
+                const nuevoFormato={};
+                Object.entries(filtros).forEach(([v, p]) => {
+                    if (!nuevoFormato[p]) {
+                        nuevoFormato[p] = [v];
+                    } else {
+                        nuevoFormato[p].push(v);
+                    }
+                });
+                console.log(nuevoFormato);
+                let cantidadElementos = 0;
+                for (let n in nuevoFormato) {
+                    let num=0;
+                    console.log(`Propiedad: ${n}`);
+                    condicionalResult+=`(`;
+                    nuevoFormato[n].forEach(va => {
+                        condicionalResult+=`data.descripcion.${n}=="${va}"`;
+                        if(num<nuevoFormato[n].length-1){
+                            condicionalResult+=`||`;
+                        }
+                        num++;
+                    });
+                    condicionalResult+=`)`;
+                    if(cantidadElementos%2==0&&cantidadElementos<Object.keys(nuevoFormato).length-1){
+                        condicionalResult+=`&&`;
+                    }
+                    cantidadElementos++;
+                }
+                console.log(condicionalResult);
+                detalles.forEach(data=>{
+                    let condicional=`if(${condicionalResult}){
+                        resultados.push(data);
+                    }`
+                    eval(condicional);
+                });
+            }
+            if (resultados.length > 0) {
+                loadProducts(resultados);
+            } else {
+                let algunoMarcado = false;
+                checkboxes.forEach(c=>{
+                    if(c.checked){
+                        algunoMarcado = true;
+                    }
+                });
+                console.log(algunoMarcado);
+                if(algunoMarcado){
+                    loadProducts([]);
+                    productContainer.innerHTML=`<p class="noneProducts">No se encontraron resultados :(</p>`;
+                }else{
+                    loadProducts(detalles);
+                }
+            }
+            console.log(resultados);
         });
     });
-
-
-    // const array=[];
-    // checkboxes.forEach(c => {
-    //     c.addEventListener('change', (e) => {
-
-    //         let dataId=(e.currentTarget.parentNode).parentNode.dataset.id.toLowerCase();
-    //         detalles.forEach(d=>{
-    //             for(const clave in d.descripcion){
-    //                 if(clave.toLowerCase()==dataId && d.descripcion[clave].toLowerCase()==e.target.dataset.id.toLowerCase()){
-    //                     if(e.target.checked){
-    //                         if(array.includes(d)){
-
-    //                         }
-    //                         array.push(d);
-    //                     }else{
-    //                         array.splice(array.indexOf(d),1);
-    //                     }
-    //                 }
-    //             }
-    //         });
-    //         const arrayaux= new Set(array);
-    //         array.length==0? loadProducts(detalles):loadProducts(Array.from(arrayaux));
-    //     });
-    // });
 
 }
 
@@ -211,7 +243,6 @@ function loadProducts(productSelect) {
 botnCategory.forEach(botn => {
     botn.addEventListener("click", (e) => {
         botnCategory.forEach(botn => botn.classList.remove("selected"));
-        console.log(e.currentTarget)
         e.currentTarget.classList.add("selected");
 
         if (e.currentTarget.id != "todos") {

@@ -872,3 +872,9 @@ input[type="range"]::-moz-range-thumb {
 .btnRemoveCart:active{
     transform: scale(.95);
 }
+
+.noneProducts{
+    font-size: 20px;
+    justify-self: center;
+    align-self: center;
+}
