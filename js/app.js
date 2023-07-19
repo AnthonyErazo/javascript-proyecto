@@ -64,23 +64,14 @@ function loadCategorys(detalles) {
         });
 
         Array.from(descripciones).forEach(d => {
-            if (a == "marca") {
-                const ulMarca = document.createElement("ul");
-                ulMarca.classList.add("checkboxMarca");
-                ulMarca.innerHTML = `
-                    <li class="buttonMarca" data-id="${d}">${d}</li>
-                `;
-                divContent.append(ulMarca);
-            } else {
-                const divDes = document.createElement("div");
-                divDes.classList.add("checkbox");
-                divDes.innerHTML = `
-                    <input type="checkbox" id="myCheckbox${indice}" class="myCheckbox" data-id="${d}">
-                    <label for="myCheckbox${indice}">${d.charAt(0).toUpperCase() + d.slice(1)}</label>
-                `;
-                divContent.append(divDes);
-                indice++;
-            }
+            const divDes = document.createElement("div");
+            divDes.classList.add("checkbox");
+            divDes.innerHTML = `
+                <input type="checkbox" id="myCheckbox${indice}" class="myCheckbox" data-id="${d}">
+                <label for="myCheckbox${indice}">${d.charAt(0).toUpperCase() + d.slice(1)}</label>
+            `;
+            divContent.append(divDes);
+            indice++;
         });
         const div = document.createElement("div");
         div.classList.add("description");
@@ -93,51 +84,7 @@ function loadCategorys(detalles) {
         `;
         detallesCategory.append(div);
     });
-    const buttonMarca = document.querySelectorAll('.buttonMarca');
     const checkboxes = document.querySelectorAll('.myCheckbox');
-    const divProcesador = document.getElementById('divProcesador');
-
-    function procesadorFiltro(filtro) {
-        let indice = 100;
-        divProcesador.innerHTML = "<h2>Procesador</h2>";
-        const divPros = document.createElement("div");
-        divPros.classList.add("content");
-        divPros.setAttribute("data-propiedad", "procesador");
-        const arrayProcesador = new Set();
-        detalles.forEach(d => {
-            if (d.descripcion.marca == filtro.target.dataset.id) {
-                arrayProcesador.add(d.descripcion.procesador);
-            }
-        });
-        Array.from(arrayProcesador).forEach(a => {
-            const div = document.createElement("div");
-            div.classList.add("checkbox");
-            div.innerHTML = `
-                <input type="checkbox" id="myCheckbox${indice}" class="myCheckbox" data-id="${a}">
-                <label for="myCheckbox${indice}">${a.charAt(0).toUpperCase() + a.slice(1)}</label>
-            `;
-            divPros.append(div);
-            indice--;
-        });
-        divProcesador.appendChild(divPros);
-    }
-    let arrayMarcas = [];
-    buttonMarca.forEach(b => {
-        b.addEventListener('click', function (e) {
-            buttonMarca.forEach(botn => botn.classList.remove("selected"));
-            e.currentTarget.classList.add("selected");
-            arrayMarcas = detalles.filter(d => d.descripcion.marca == e.target.dataset.id);
-            checkboxes.forEach(c => {
-                c.checked = false;
-            });
-            if (e.target.dataset.id == "Intel") {
-                procesadorFiltro(e);
-            } else if (e.target.dataset.id == "AMD") {
-                procesadorFiltro(e);
-            }
-            loadProducts(arrayMarcas);
-        });
-    });
     /*Eventos de los checkbox*/
     checkboxes.forEach((c) => {
         c.addEventListener("change", (e) => {
@@ -174,7 +121,7 @@ function loadCategorys(detalles) {
                         num++;
                     });
                     condicionalResult+=`)`;
-                    if(cantidadElementos%2==0&&cantidadElementos<Object.keys(nuevoFormato).length-1){
+                    if(cantidadElementos<Object.keys(nuevoFormato).length-1){
                         condicionalResult+=`&&`;
                     }
                     cantidadElementos++;
@@ -196,7 +143,6 @@ function loadCategorys(detalles) {
                         algunoMarcado = true;
                     }
                 });
-                console.log(algunoMarcado);
                 if(algunoMarcado){
                     loadProducts([]);
                     productContainer.innerHTML=`<p class="noneProducts">No se encontraron resultados :(</p>`;
