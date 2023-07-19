@@ -5,6 +5,7 @@ async function cargarJson() {
         const response = await fetch("./datos.json");
         producto = await response.json();
         loadProducts(producto);
+        inputRange(producto);
     } catch (e) {
         console.error("Error al cargar los datos\n", e);
     }
@@ -24,17 +25,13 @@ const productContainer = document.querySelector('#productContainer'),
     search = document.getElementById('search'),
     productSearchClass = document.querySelector('.productSearch'),
     productSearch = document.querySelector('#productSearch'),
-    containerSearch = document.querySelector('.containerSearch'),
-    rangeInput = document.querySelectorAll(".rangeInput input"),
-    priceInput = document.querySelectorAll(".priceInput input"),
-    range = document.querySelector(".slider .progress");
+    containerSearch = document.querySelector('.containerSearch');
 let botnView = document.querySelectorAll(".tooltip"),
     botnAdd = document.querySelectorAll(".botnAdd"),
     numProductsCart = document.querySelector('.numProductsCart');
 let carrito = [];
 let cantProduct = 1,
-    productsCart = 0,
-    priceGap = 10;
+    productsCart = 0;
 let filtros = {};
 /*Cargando el aside de filtros*/
 function loadCategorys(detalles) {
@@ -56,8 +53,6 @@ function loadCategorys(detalles) {
         detalles.forEach(p => {
             for (const clave in p.descripcion) {
                 if (clave == a) {
-                    // console.log(a);
-                    // console.log(clave);
                     descripciones.add(p.descripcion[clave]);
                 }
             }
@@ -67,8 +62,11 @@ function loadCategorys(detalles) {
             const divDes = document.createElement("div");
             divDes.classList.add("checkbox");
             divDes.innerHTML = `
-                <input type="checkbox" id="myCheckbox${indice}" class="myCheckbox" data-id="${d}">
-                <label for="myCheckbox${indice}">${d.charAt(0).toUpperCase() + d.slice(1)}</label>
+                <div class="containerCheck">
+                    <input type="checkbox" id="myCheckbox${indice}" class="myCheckbox" data-id="${d}">
+                    <label for="myCheckbox${indice}"></label>
+                </div>
+                <p>${d.charAt(0).toUpperCase() + d.slice(1)}</p>
             `;
             divContent.append(divDes);
             indice++;
@@ -89,7 +87,7 @@ function loadCategorys(detalles) {
     checkboxes.forEach((c) => {
         c.addEventListener("change", (e) => {
             const resultados=[];
-            const propiedad = e.target.parentElement.parentElement.dataset.propiedad;
+            const propiedad = e.target.parentElement.parentElement.parentElement.dataset.propiedad;
             const valor = e.target.dataset.id;
             let condicionalResult="";
             if (filtros[valor]) {
@@ -97,7 +95,6 @@ function loadCategorys(detalles) {
             } else {
                 filtros[valor] = propiedad;
             }
-            console.log(Object.keys(filtros).length)
             if(Object.keys(filtros).length!=0){
                 const nuevoFormato={};
                 Object.entries(filtros).forEach(([v, p]) => {
@@ -107,11 +104,9 @@ function loadCategorys(detalles) {
                         nuevoFormato[p].push(v);
                     }
                 });
-                console.log(nuevoFormato);
                 let cantidadElementos = 0;
                 for (let n in nuevoFormato) {
                     let num=0;
-                    console.log(`Propiedad: ${n}`);
                     condicionalResult+=`(`;
                     nuevoFormato[n].forEach(va => {
                         condicionalResult+=`data.descripcion.${n}=="${va}"`;
@@ -126,7 +121,6 @@ function loadCategorys(detalles) {
                     }
                     cantidadElementos++;
                 }
-                console.log(condicionalResult);
                 detalles.forEach(data=>{
                     let condicional=`if(${condicionalResult}){
                         resultados.push(data);
@@ -136,6 +130,7 @@ function loadCategorys(detalles) {
             }
             if (resultados.length > 0) {
                 loadProducts(resultados);
+                inputRange(resultados);
             } else {
                 let algunoMarcado = false;
                 checkboxes.forEach(c=>{
@@ -144,13 +139,14 @@ function loadCategorys(detalles) {
                     }
                 });
                 if(algunoMarcado){
+                    inputRange([]);
                     loadProducts([]);
                     productContainer.innerHTML=`<p class="noneProducts">No se encontraron resultados :(</p>`;
                 }else{
                     loadProducts(detalles);
+                    inputRange(detalles);
                 }
             }
-            console.log(resultados);
         });
     });
 
@@ -197,9 +193,11 @@ botnCategory.forEach(botn => {
             const productsBotn = producto.filter(producto => producto.categoria.id === e.currentTarget.id);
             loadProducts(productsBotn);
             loadCategorys(productsBotn);
+            inputRange(productsBotn);
         } else {
             titleMain.innerText = "Todos los productos";
             loadProducts(producto);
+            inputRange(producto);
             loadCategorys([]);
         }
 
@@ -425,45 +423,52 @@ document.querySelector('.goTopContainer').addEventListener('click', () => {
 });
 
 /*Eventos para barra de rango de precio*/
-priceInput.forEach(input => {
-    input.addEventListener("input", e => {
-        let minPrice = parseInt(priceInput[0].value),
-            maxPrice = parseInt(priceInput[1].value);
 
-
-        if ((maxPrice - minPrice >= priceGap) && maxPrice <= rangeInput[1].max) {
-            if (e.target.className === "inputMin") {
-                rangeInput[0].value = minPrice;
-                range.style.left = ((minPrice / rangeInput[0].max) * 100) + "%";
-            } else {
-                rangeInput[1].value = maxPrice;
-                range.style.right = 100 - (maxPrice / rangeInput[1].max) * 100 + "%";
+function inputRange(r){
+    const rangeInput = document.querySelectorAll(".rangeInput input"),
+    priceInput = document.querySelectorAll(".priceInput input"),
+    range = document.querySelector(".slider .progress");
+    let priceGap = 10;
+    priceInput.forEach(input => {
+        input.addEventListener("input", e => {
+            let minPrice = parseInt(priceInput[0].value),
+                maxPrice = parseInt(priceInput[1].value);
+    
+    
+            if ((maxPrice - minPrice >= priceGap) && maxPrice <= rangeInput[1].max) {
+                if (e.target.className === "inputMin") {
+                    rangeInput[0].value = minPrice;
+                    range.style.left = ((minPrice / rangeInput[0].max) * 100) + "%";
+                } else {
+                    rangeInput[1].value = maxPrice;
+                    range.style.right = 100 - (maxPrice / rangeInput[1].max) * 100 + "%";
+                }
             }
-        }
-        const productsPrice = producto.filter(p => (p.precio < maxPrice && p.precio > minPrice));
-        loadProducts(productsPrice);
+            const productsPrice = r.filter(p => (p.precio < maxPrice && p.precio > minPrice));
+            loadProducts(productsPrice);
+        });
     });
-});
-
-rangeInput.forEach(input => {
-    input.addEventListener("input", e => {
-        let minVal = parseInt(rangeInput[0].value),
-            maxVal = parseInt(rangeInput[1].value);
-
-
-        if ((maxVal - minVal) < priceGap) {
-            if (e.target.className === "rangeMin") {
-                rangeInput[0].value = maxVal - priceGap
+    
+    rangeInput.forEach(input => {
+        input.addEventListener("input", e => {
+            let minVal = parseInt(rangeInput[0].value),
+                maxVal = parseInt(rangeInput[1].value);
+    
+    
+            if ((maxVal - minVal) < priceGap) {
+                if (e.target.className === "rangeMin") {
+                    rangeInput[0].value = maxVal - priceGap
+                } else {
+                    rangeInput[1].value = minVal + priceGap;
+                }
             } else {
-                rangeInput[1].value = minVal + priceGap;
+                priceInput[0].value = minVal;
+                priceInput[1].value = maxVal;
+                range.style.left = ((minVal / rangeInput[0].max) * 100) + "%";
+                range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
             }
-        } else {
-            priceInput[0].value = minVal;
-            priceInput[1].value = maxVal;
-            range.style.left = ((minVal / rangeInput[0].max) * 100) + "%";
-            range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
-        }
-        const productsPrice = producto.filter(p => (p.precio > minVal && p.precio < maxVal));
-        loadProducts(productsPrice);
+            const productsPrice = r.filter(p => (p.precio > minVal && p.precio < maxVal));
+            loadProducts(productsPrice);
+        });
     });
-});
+}

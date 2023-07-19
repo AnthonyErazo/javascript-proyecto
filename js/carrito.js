@@ -137,11 +137,18 @@ function eliminateProduct(e) {
 }
 /*Funcion para comprar productos añadidos al carrito*/
 function comprar() {
-    Swal.fire(
-        'Compra Realizada!',
-        'Gracias por elegirnos! :)',
-        'success'
-    )
+    Swal.mixin({
+        customClass: {
+            confirmButton: 'btnRemoveCart'
+        },
+        buttonsStyling: false
+    }).fire({
+        title: 'Compra Realizada!',
+        text: 'Gracias por elegirnos! :)',
+        icon: 'success',
+        confirmButtonText: 'Okey',
+        reverseButtons: true
+    })
     carrito.length = 0;
     localStorage.setItem("carrito", JSON.stringify(carrito));
     productoCartContainer.innerHTML = "";

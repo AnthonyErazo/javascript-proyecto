@@ -711,24 +711,41 @@ html {
 
 
 /*Estilos del filtro*/
-.checkboxMarca li.selected {
-    border: solid 1px #a09f9f;
-    border-radius: 10px;
-    color: #a09f9f;
+.description .content .checkbox{
+    margin-left: 20px;
+    display: flex;
+    position: relative;
 }
-.checkboxMarca li:hover{
-    color: #a09f9f;
+.description .content .checkbox p{
+    margin-left: 8px;
 }
-.checkboxMarca li{
-    background-color: transparent;
-    color: #111;
+.description .content .checkbox input[type="checkbox"]{
     cursor: pointer;
-    font-weight: 600;
-    font-size: 17px;
-    padding-left: 12px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    list-style: none;
+    position: absolute;
+    opacity: 0;
+}
+.description .content .checkbox label{
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    background-color: #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.description .content .checkbox label:hover{
+    background-color: #656565;
+}
+.description .content .checkbox input[type="checkbox"]:checked + label {
+    background-color: #16578b;
+    width: 21px;
+    height: 21px;
+    margin-bottom: 3.5px;
+}
+.description .content .checkbox input[type="checkbox"]:checked + label::after {
+    content: "\2713";
+    color: #fff;
+    margin-left: 3px;
+    margin-right: 3px;
 }
 .filter{
     margin-bottom: 50px;
